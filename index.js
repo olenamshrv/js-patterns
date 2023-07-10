@@ -828,7 +828,7 @@ console.log('Test')  */
 
 // const buttonType = "primary";
 
-const buttonType = "main1";
+// const buttonType = "main1";
 
 // switch (buttonType) {
 //   case "main":
@@ -1351,41 +1351,41 @@ const buttonType = "main1";
 //
 //=====================================
 
-function playTrackById(trackId) {
-  // отримати файл пісні і її запустити
-}
-
-// function stopTrackById(trackId) {
-//   // зупинити програвання файлу пісні
+// function playTrackById(trackId) {
+//   // отримати файл пісні і її запустити
 // }
 
-function play(trackName, trackId) {
-  console.log(`Запускаємо ${trackName}`);
-  playTrackById(trackId);
-}
+// // function stopTrackById(trackId) {
+// //   // зупинити програвання файлу пісні
+// // }
 
-function end(oldTrackName, newTrackName) {
-  console.log(`Завершили грати ${oldTrackName}`);
-  console.log(`Наступна пісня ${newTrackName}`);
-}
+// function play(trackName, trackId) {
+//   console.log(`Запускаємо ${trackName}`);
+//   playTrackById(trackId);
+// }
 
-function pausePlay(currentTrackName) {
-  console.log(`Трек ${currentTrackName} на паузі`);
+// function end(oldTrackName, newTrackName) {
+//   console.log(`Завершили грати ${oldTrackName}`);
+//   console.log(`Наступна пісня ${newTrackName}`);
+// }
 
-  reloadDataTrack();
+// function pausePlay(currentTrackName) {
+//   console.log(`Трек ${currentTrackName} на паузі`);
 
-  play();
-}
+//   reloadDataTrack();
 
-function reloadDataTrack(amount) {
-  if (amount <= 0) {
-    console.log("Дані оновлені вказану кількість разів");
-  } else {
-    console.log("Повторне оновлення");
-    // певний код дл яоновлення даних
-    reloadDataTrack(amount - 1);
-  }
-}
+//   play();
+// }
+
+// function reloadDataTrack(amount) {
+//   if (amount <= 0) {
+//     console.log("Дані оновлені вказану кількість разів");
+//   } else {
+//     console.log("Повторне оновлення");
+//     // певний код дл яоновлення даних
+//     reloadDataTrack(amount - 1);
+//   }
+// }
 
 // reloadDataTrack(5);
 
@@ -1411,13 +1411,13 @@ function reloadDataTrack(amount) {
 //   return fn();
 // };
 
-const runCommand = function (command, errorFn) {
-  const result = command();
+// const runCommand = function (command, errorFn) {
+//   const result = command();
 
-  if (!result) {
-    return errorFn();
-  }
-};
+//   if (!result) {
+//     return errorFn();
+//   }
+// };
 
 // runCommand(
 //   function () {
@@ -1483,36 +1483,36 @@ const runCommand = function (command, errorFn) {
 
 // console.log(testFunc());
 
-function stopTrackById(trackId) {
-  // зупинити програвання файлу пісні
-  console.log(`Отримати файл пісні з id = ${trackId}`);
-}
+// function stopTrackById(trackId) {
+//   // зупинити програвання файлу пісні
+//   console.log(`Отримати файл пісні з id = ${trackId}`);
+// }
 
-function pauseStopByTrack(trackName, trackId) {
-  // let oldTrackName = null;
-  // let oldTrackid = null;
+// function pauseStopByTrack(trackName, trackId) {
+//   // let oldTrackName = null;
+//   // let oldTrackid = null;
 
-  let isPause = null;
+//   let isPause = null;
 
-  return () => {
-    // let oldTrackName = null;
-    // let oldTrackid = null;
+//   return () => {
+//     // let oldTrackName = null;
+//     // let oldTrackid = null;
 
-    if (isPause == true) {
-      return;
-    }
+//     if (isPause == true) {
+//       return;
+//     }
 
-    stopTrackById(trackId);
-    console.log(`Трек ${trackName} на паузі`);
-    isPause = true;
-  };
-}
+//     stopTrackById(trackId);
+//     console.log(`Трек ${trackName} на паузі`);
+//     isPause = true;
+//   };
+// }
 
-const pauseStop123 = pauseStopByTrack(`IT - Hello world!`, 10);
+// const pauseStop123 = pauseStopByTrack(`IT - Hello world!`, 10);
 
-pauseStop123();
-pauseStop123();
-pauseStop123();
+// pauseStop123();
+// pauseStop123();
+// pauseStop123();
 
 //======================================
 
@@ -1520,63 +1520,236 @@ pauseStop123();
 //   return `${amount * 4}${unit}`;
 // }
 
-const memoCalcSpace = (oldAmount = null, oldUnit = null, oldResult = null) => {
-  // let oldAmount = null;
-  // let newAmount = null;
+// const memoCalcSpace = (oldAmount = null, oldUnit = null, oldResult = null) => {
+//   // let oldAmount = null;
+//   // let newAmount = null;
 
-  return (amount, unit = "px") => {
-    if (oldAmount === amount && unit === oldUnit) {
-      // return `${oldAmount * 4}${oldUnit}`;
+//   return (amount, unit = "px") => {
+//     if (oldAmount === amount && unit === oldUnit) {
+//       // return `${oldAmount * 4}${oldUnit}`;
 
-      console.log("Memo");
-      return oldResult;
-    }
+//       console.log("Memo");
+//       return oldResult;
+//     }
 
-    // const result = `${amount * 4}${unit}`;
-    oldResult = `${amount * 4}${unit}`;
-    oldAmount = amount;
-    oldUnit = unit;
+//     // const result = `${amount * 4}${unit}`;
+//     oldResult = `${amount * 4}${unit}`;
+//     oldAmount = amount;
+//     oldUnit = unit;
 
-    return oldResult;
+//     return oldResult;
 
-    // return `${amount * 4}${unit}`;
-  };
-};
+//     // return `${amount * 4}${unit}`;
+//   };
+// };
 
-const calcSpace = memoCalcSpace();
+// const calcSpace = memoCalcSpace();
 
-console.log(calcSpace(4));
-console.log(calcSpace(4));
+// console.log(calcSpace(4));
+// console.log(calcSpace(4));
 
-const restartTrack = (trackName, trackId) => {
-  return play(end());
-};
+// const restartTrack = (trackName, trackId) => {
+//   return play(end());
+// };
 
-const getSpaceFromDesign = (componentName) => {
-  switch (componentName) {
-    case "button":
-      return 4;
-    case "card":
-      return 3;
-    default:
-      return 2;
+// const getSpaceFromDesign = (componentName) => {
+//   switch (componentName) {
+//     case "button":
+//       return 4;
+//     case "card":
+//       return 3;
+//     default:
+//       return 2;
+//   }
+// };
+
+// const isMobile = true;
+
+// const amount = getSpaceFromDesign("button");
+// const amountMobile = isMobile ? amount / 2 : amount;
+// // const amountInPx = calcSpace(amount);
+// const amountInPx = calcSpace(amountMobile);
+// console.log(amountInPx);
+
+// const calcSpaceFromDesign = (componentName) => {
+//   const result = getSpaceFromDesign(componentName);
+//   // return calcSpace(getSpaceFromDesign(componentName));
+//   return calcSpace(isMobile ? result / 2 : result);
+// };
+
+// console.log("=============");
+
+// console.log(calcSpaceFromDesign("button"));
+
+//===============Lesson 11======Build-in global functions=========================
+
+// const code = `(5 + 5) % 5 === 0`;
+// console.log(eval(code));
+
+// const code = console.log("Hello world");
+// eval(code);
+
+// function calcScreenRation(w, h) {
+//   let result = w / h;
+//   // return w / h;
+
+//   if (isNaN(result)) {
+//     return "Error";
+//   } else if (!isFinite(result)) {
+//     return "Is Infinite";
+//   } else {
+//     return result;
+//   }
+
+//   // return isFinite(result) ? result : null;
+// }
+
+// console.log(calcScreenRation(1920, 1080));
+// console.log(calcScreenRation(1920, 0));
+
+// console.log(calcScreenRation(1920, "123f"));
+
+// console.log(calcScreenRation(1920, "123"));
+
+//=======================
+
+// const num = "10";
+
+// console.log(10 + num);
+
+// const num = parseInt("10");
+
+// const num = parseInt("10 fff");
+
+// const num = parseInt("10 fff 10");
+
+// const num = parseInt("10 fff20");
+// console.log(10 + num);
+
+// const num = parseInt("fff 20");
+
+// console.log(calcScreenRation(1920, 1080));
+
+// const num = parseInt("20px");
+// console.log(num);
+
+// function calcScreenRation(w, h) {
+//   w = parseInt(w);
+//   h = parseInt(h);
+
+//   let result = w / h;
+
+//   if (isNaN(result)) {
+//     return "Error";
+//   } else if (!isFinite(result)) {
+//     return "Is Infinite";
+//   } else {
+//     return result;
+//   }
+// }
+
+// console.log(calcScreenRation(1920, 1000));
+
+// const num = parseInt("0101", 2);
+// const num = parseInt("3333", 2);
+
+// const num = parseInt("1.6344554", 2);
+
+const num = parseFloat("1.6344554", 2);
+console.log(num);
+
+// console.log(calcScreenRation("1920.5px", "1000.5px"));
+
+function calcScreenRation(w, h) {
+  w = parseFloat(w);
+  h = parseFloat(h);
+
+  let result = w / h;
+
+  if (isNaN(result)) {
+    return "Error";
+  } else if (!isFinite(result)) {
+    return "Is Infinite";
+  } else {
+    return result;
   }
-};
+}
 
-const isMobile = true;
+console.log(calcScreenRation("1920.5px", "1000.5px"));
 
-const amount = getSpaceFromDesign("button");
-const amountMobile = isMobile ? amount / 2 : amount;
-// const amountInPx = calcSpace(amount);
-const amountInPx = calcSpace(amountMobile);
-console.log(amountInPx);
+//===================
 
-const calcSpaceFromDesign = (componentName) => {
-  const result = getSpaceFromDesign(componentName);
-  // return calcSpace(getSpaceFromDesign(componentName));
-  return calcSpace(isMobile ? result / 2 : result);
-};
+const domain = "it-brains.com.ua";
 
-console.log("=============");
+function redirectToPath(path) {
+  // const link = `http://${domain}/${path}`;
+  // робимо перехід на сторінку
 
-console.log(calcSpaceFromDesign("button"));
+  // const link = encodeURI(`http://${domain}/${path}`);
+
+  // const link = encodeURIComponent(`http://${domain}/${path}`);
+
+  // path = encodeURIComponent(path);
+
+  path = encodeURI(path);
+
+  const link = `http://${domain}/${path}`;
+
+  console.log(link);
+
+  return link;
+}
+
+// redirectToPath("product/18273645/info");
+
+redirectToPath("product/Мікрофон рожевий/info");
+
+// //=====
+
+// const uri =
+//   "http://it-brains.com.ua/product/%D0%9C%D1%96%D0%BA%D1%80%D0%BE%D1%84%D0%BE%D0%BD%20%D1%80%D0%BE%D0%B6%D0%B5%D0%B2%D0%B8%D0%B9/info";
+// function getUrl(urlInUri) {
+//   urlInUri = decodeURI(urlInUri);
+//   console.log(urlInUri);
+
+//   return urlInUri;
+// }
+
+// // getUrl(uri);
+
+// // const link = "product/Мікрофон рожевий/info";
+
+// const path = "product/Мікрофон рожевий/info";
+
+// const link = `http://${domain}/${path}`;
+
+// const link1 = redirectToPath(path);
+
+// const link2 = getUrl(link1); // URI
+
+// console.log(link === link2); // Decode URI
+
+//=====
+
+const uri =
+  "http://it-brains.com.ua/product/%D0%9C%D1%96%D0%BA%D1%80%D0%BE%D1%84%D0%BE%D0%BD%20%D1%80%D0%BE%D0%B6%D0%B5%D0%B2%D0%B8%D0%B9/info";
+function getUrl(urlInUri) {
+  urlInUri = decodeURIComponent(urlInUri);
+  console.log(urlInUri);
+
+  return urlInUri;
+}
+
+// getUrl(uri);
+
+// const link = "product/Мікрофон рожевий/info";
+
+const path = "product/Мікрофон рожевий/info";
+
+const link = `http://${domain}/${path}`;
+
+const link1 = redirectToPath(path);
+
+const link2 = getUrl(link1); // URI
+
+console.log(link === link2); // Decode URI
