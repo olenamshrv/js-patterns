@@ -1655,61 +1655,86 @@ console.log('Test')  */
 
 // const num = parseInt("1.6344554", 2);
 
-const num = parseFloat("1.6344554", 2);
-console.log(num);
+// const num = parseFloat("1.6344554", 2);
+// console.log(num);
+
+// // console.log(calcScreenRation("1920.5px", "1000.5px"));
+
+// function calcScreenRation(w, h) {
+//   w = parseFloat(w);
+//   h = parseFloat(h);
+
+//   let result = w / h;
+
+//   if (isNaN(result)) {
+//     return "Error";
+//   } else if (!isFinite(result)) {
+//     return "Is Infinite";
+//   } else {
+//     return result;
+//   }
+// }
 
 // console.log(calcScreenRation("1920.5px", "1000.5px"));
 
-function calcScreenRation(w, h) {
-  w = parseFloat(w);
-  h = parseFloat(h);
+// //===================
 
-  let result = w / h;
+// const domain = "it-brains.com.ua";
 
-  if (isNaN(result)) {
-    return "Error";
-  } else if (!isFinite(result)) {
-    return "Is Infinite";
-  } else {
-    return result;
-  }
-}
+// function redirectToPath(path) {
+//   // const link = `http://${domain}/${path}`;
+//   // робимо перехід на сторінку
 
-console.log(calcScreenRation("1920.5px", "1000.5px"));
+//   // const link = encodeURI(`http://${domain}/${path}`);
 
-//===================
+//   // const link = encodeURIComponent(`http://${domain}/${path}`);
 
-const domain = "it-brains.com.ua";
+//   // path = encodeURIComponent(path);
 
-function redirectToPath(path) {
-  // const link = `http://${domain}/${path}`;
-  // робимо перехід на сторінку
+//   path = encodeURI(path);
 
-  // const link = encodeURI(`http://${domain}/${path}`);
+//   const link = `http://${domain}/${path}`;
 
-  // const link = encodeURIComponent(`http://${domain}/${path}`);
+//   console.log(link);
 
-  // path = encodeURIComponent(path);
+//   return link;
+// }
 
-  path = encodeURI(path);
+// // redirectToPath("product/18273645/info");
 
-  const link = `http://${domain}/${path}`;
+// redirectToPath("product/Мікрофон рожевий/info");
 
-  console.log(link);
+// // //=====
 
-  return link;
-}
+// // const uri =
+// //   "http://it-brains.com.ua/product/%D0%9C%D1%96%D0%BA%D1%80%D0%BE%D1%84%D0%BE%D0%BD%20%D1%80%D0%BE%D0%B6%D0%B5%D0%B2%D0%B8%D0%B9/info";
+// // function getUrl(urlInUri) {
+// //   urlInUri = decodeURI(urlInUri);
+// //   console.log(urlInUri);
 
-// redirectToPath("product/18273645/info");
+// //   return urlInUri;
+// // }
 
-redirectToPath("product/Мікрофон рожевий/info");
+// // // getUrl(uri);
+
+// // // const link = "product/Мікрофон рожевий/info";
+
+// // const path = "product/Мікрофон рожевий/info";
+
+// // const link = `http://${domain}/${path}`;
+
+// // const link1 = redirectToPath(path);
+
+// // const link2 = getUrl(link1); // URI
+
+// // console.log(link === link2); // Decode URI
 
 // //=====
 
 // const uri =
 //   "http://it-brains.com.ua/product/%D0%9C%D1%96%D0%BA%D1%80%D0%BE%D1%84%D0%BE%D0%BD%20%D1%80%D0%BE%D0%B6%D0%B5%D0%B2%D0%B8%D0%B9/info";
 // function getUrl(urlInUri) {
-//   urlInUri = decodeURI(urlInUri);
+//   urlInUri = decodeURIComponent(urlInUri);
 //   console.log(urlInUri);
 
 //   return urlInUri;
@@ -1729,27 +1754,182 @@ redirectToPath("product/Мікрофон рожевий/info");
 
 // console.log(link === link2); // Decode URI
 
+//========================Lesson 12==============built-in constructor====================
+
+// const a = 10;
+
+// const a = Number(10);
+// // const b = 10;
+// const b = 5.23522;
+
+// b.console.log(a);
+
+// Number.console.log(a === b);
+
+// //=====
+
+// const a = 0.1;
+// const b = 0.2;
+
+// const c = 0.3;
+
+// // console.log(a + b);
+
+// const d = a + b;
+
+// // console.log(d);
+
+// console.log(d - c < Number.EPSILON) && c - d < Number.EPSILON;
+
+// console.log(Number.EPSILON);
+
+// //=====
+
+// const a = 0.00001;
+// const b = 0.00002;
+
+// const c = 0.00003;
+
+// // console.log(a + b);
+
+// const d = a + b;
+
+// console.log(d);
+
+// console.log(d - c < Number.EPSILON) && c - d < Number.EPSILON;
+
 //=====
 
-const uri =
-  "http://it-brains.com.ua/product/%D0%9C%D1%96%D0%BA%D1%80%D0%BE%D1%84%D0%BE%D0%BD%20%D1%80%D0%BE%D0%B6%D0%B5%D0%B2%D0%B8%D0%B9/info";
-function getUrl(urlInUri) {
-  urlInUri = decodeURIComponent(urlInUri);
-  console.log(urlInUri);
+const a = 0.00001;
+const b = 0.00002;
 
-  return urlInUri;
+const c = 0.00003;
+
+// console.log(a + b);
+
+const d = a + b;
+
+// console.log(d);
+
+// console.log(Number.MIN_SAFE_INTEGER);
+// console.log(Number.MAX_SAFE_INTEGER);
+
+// console.log(Number.MIN_VALUE);
+// console.log(Number.MAX_VALUE);
+
+function reviewNumber(num) {
+  // if (isNaN(num)) {
+  //   return console.log("Is not a number", num);
+  // }
+
+  if (Number.isNaN(num)) {
+    return console.log("Is not a number", num);
+  }
+  // if (isNaN(num)) {
+  //   return console.log("Is not a number", num);
+  // }
+  if (!num && num !== 0) {
+    return console.log("Bad number", num);
+    // } else if (!Number.isInteger(num)) {
+    //   return console.log("Дробове число", num);
+    // }
+    // } else if (!isInteger(num)) {   // помилка!
+    //   return console.log("Дробове число", num);
+    // }
+  } else if (!Number.isSafeInteger(num)) {
+    return console.log("Небезпечне число", num);
+  }
+
+  return console.log(num);
 }
 
-// getUrl(uri);
+// reviewNumber(10);
+// reviewNumber(0);
+// reviewNumber("gsfdsf");
 
-// const link = "product/Мікрофон рожевий/info";
+// reviewNumber(10.5);
 
-const path = "product/Мікрофон рожевий/info";
+// reviewNumber(Number.MAX_SAFE_INTEGER + 1); //9007199254740992
+// reviewNumber(Number.MAX_SAFE_INTEGER + 2); //9007199254740992
 
-const link = `http://${domain}/${path}`;
+// reviewNumber(Number.MAX_SAFE_INTEGER + 10); // 9007199254741000
+// reviewNumber(Number.MAX_SAFE_INTEGER + 11); // 9007199254741002
+// reviewNumber(Number.MAX_SAFE_INTEGER + 12); // 9007199254741004
 
-const link1 = redirectToPath(path);
+// reviewNumber(9007199254741004); //
 
-const link2 = getUrl(link1); // URI
+// reviewNumber(9007199254741004n); //bigInt
 
-console.log(link === link2); // Decode URI
+10;
+
+1000;
+100, 25, Number(120);
+
+Number(50).toFixed().codePointAt().toPrecision();
+
+const a1 = Number(10);
+const a2 = a1.toFixed;
+// const a3 = a2.charAt();
+
+(1000).toFixed();
+
+// const a4 = 1.00001;
+// const a4 = 1.12523401;
+// const a4 = 1325.47523401;
+const a5 = Number(1.00001).toFixed();
+const a7 = Number("1.00001 f");
+const a6 = parseInt("1000 f");
+
+// console.log(a4, a5, a6, a7);
+
+// const a8 = a4.toFixed();
+
+// const a9 = a4.toFixed(2);
+
+// const a9 = parseFloat(a4.toFixed(2));
+// const a9 = parseFloat(a4.toPrecision(5));
+// const a9 = parseFloat(a4.toPrecision(4));
+// const a9 = parseFloat(a4.toPrecision(3));
+
+// const a4 = 9999999991111111;
+// const a9 = parseFloat(a4.toPrecision(2));
+
+// console.log(a9);
+// console.log(a4);
+
+// console.log(a8);
+
+// console.log(a9, typeof a9);
+
+const a4 = 9999991546411;
+// const a41 = a4.toExponential();
+const a41 = a4.toExponential(2);
+const a42 = parseFloat(a41);
+const a43 = parseInt(a41);
+const a44 = Number(a41);
+const a45 = a4.toExponential();
+const a46 = parseFloat(a4);
+const a47 = parseInt(a4);
+// console.log(a4);
+// console.log(a41);
+// console.log(a42);
+// console.log(typeof a41);
+// console.log(typeof 1.0e16);
+
+// console.log(a43);
+// console.log(a44);
+// console.log(a45);
+// console.log(a46);
+// console.log(a47);
+
+const c1 = 65478;
+const c2 = c1.toExponential();
+const c3 = parseFloat(c2);
+// const c5 = c3.toString();
+// const c5 = c3.toString(2);
+
+const c5 = c3.toString(32);
+
+// console.log(c1 === c3);
+
+console.log(c5);
