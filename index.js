@@ -1754,7 +1754,7 @@ console.log('Test')  */
 
 // console.log(link === link2); // Decode URI
 
-//========================Lesson 12==============built-in constructor====================
+//========================Lesson 12==============built-in constructor for number types====================
 
 // const a = 10;
 
@@ -1800,136 +1800,232 @@ console.log('Test')  */
 
 //=====
 
-const a = 0.00001;
-const b = 0.00002;
+// const a = 0.00001;
+// const b = 0.00002;
 
-const c = 0.00003;
+// const c = 0.00003;
 
-// console.log(a + b);
+// // console.log(a + b);
 
-const d = a + b;
+// const d = a + b;
 
-// console.log(d);
+// // console.log(d);
 
-// console.log(Number.MIN_SAFE_INTEGER);
-// console.log(Number.MAX_SAFE_INTEGER);
+// // console.log(Number.MIN_SAFE_INTEGER);
+// // console.log(Number.MAX_SAFE_INTEGER);
 
-// console.log(Number.MIN_VALUE);
-// console.log(Number.MAX_VALUE);
+// // console.log(Number.MIN_VALUE);
+// // console.log(Number.MAX_VALUE);
 
-function reviewNumber(num) {
-  // if (isNaN(num)) {
-  //   return console.log("Is not a number", num);
-  // }
+// function reviewNumber(num) {
+//   // if (isNaN(num)) {
+//   //   return console.log("Is not a number", num);
+//   // }
 
-  if (Number.isNaN(num)) {
-    return console.log("Is not a number", num);
-  }
-  // if (isNaN(num)) {
-  //   return console.log("Is not a number", num);
-  // }
-  if (!num && num !== 0) {
-    return console.log("Bad number", num);
-    // } else if (!Number.isInteger(num)) {
-    //   return console.log("Дробове число", num);
-    // }
-    // } else if (!isInteger(num)) {   // помилка!
-    //   return console.log("Дробове число", num);
-    // }
-  } else if (!Number.isSafeInteger(num)) {
-    return console.log("Небезпечне число", num);
-  }
+//   if (Number.isNaN(num)) {
+//     return console.log("Is not a number", num);
+//   }
+//   // if (isNaN(num)) {
+//   //   return console.log("Is not a number", num);
+//   // }
+//   if (!num && num !== 0) {
+//     return console.log("Bad number", num);
+//     // } else if (!Number.isInteger(num)) {
+//     //   return console.log("Дробове число", num);
+//     // }
+//     // } else if (!isInteger(num)) {   // помилка!
+//     //   return console.log("Дробове число", num);
+//     // }
+//   } else if (!Number.isSafeInteger(num)) {
+//     return console.log("Небезпечне число", num);
+//   }
 
-  return console.log(num);
-}
+//   return console.log(num);
+// }
 
-// reviewNumber(10);
-// reviewNumber(0);
-// reviewNumber("gsfdsf");
+// // reviewNumber(10);
+// // reviewNumber(0);
+// // reviewNumber("gsfdsf");
 
-// reviewNumber(10.5);
+// // reviewNumber(10.5);
 
-// reviewNumber(Number.MAX_SAFE_INTEGER + 1); //9007199254740992
-// reviewNumber(Number.MAX_SAFE_INTEGER + 2); //9007199254740992
+// // reviewNumber(Number.MAX_SAFE_INTEGER + 1); //9007199254740992
+// // reviewNumber(Number.MAX_SAFE_INTEGER + 2); //9007199254740992
 
-// reviewNumber(Number.MAX_SAFE_INTEGER + 10); // 9007199254741000
-// reviewNumber(Number.MAX_SAFE_INTEGER + 11); // 9007199254741002
-// reviewNumber(Number.MAX_SAFE_INTEGER + 12); // 9007199254741004
+// // reviewNumber(Number.MAX_SAFE_INTEGER + 10); // 9007199254741000
+// // reviewNumber(Number.MAX_SAFE_INTEGER + 11); // 9007199254741002
+// // reviewNumber(Number.MAX_SAFE_INTEGER + 12); // 9007199254741004
 
-// reviewNumber(9007199254741004); //
+// // reviewNumber(9007199254741004); //
 
-// reviewNumber(9007199254741004n); //bigInt
+// // reviewNumber(9007199254741004n); //bigInt
 
-10;
+// 10;
 
-1000;
-100, 25, Number(120);
+// 1000;
+// 100, 25, Number(120);
 
-Number(50).toFixed().codePointAt().toPrecision();
+// Number(50).toFixed().codePointAt().toPrecision();
 
-const a1 = Number(10);
-const a2 = a1.toFixed;
-// const a3 = a2.charAt();
+// const a1 = Number(10);
+// const a2 = a1.toFixed;
+// // const a3 = a2.charAt();
 
-(1000).toFixed();
+// (1000).toFixed();
 
-// const a4 = 1.00001;
-// const a4 = 1.12523401;
-// const a4 = 1325.47523401;
-const a5 = Number(1.00001).toFixed();
-const a7 = Number("1.00001 f");
-const a6 = parseInt("1000 f");
+// // const a4 = 1.00001;
+// // const a4 = 1.12523401;
+// // const a4 = 1325.47523401;
+// const a5 = Number(1.00001).toFixed();
+// const a7 = Number("1.00001 f");
+// const a6 = parseInt("1000 f");
 
-// console.log(a4, a5, a6, a7);
+// // console.log(a4, a5, a6, a7);
 
-// const a8 = a4.toFixed();
+// // const a8 = a4.toFixed();
 
-// const a9 = a4.toFixed(2);
+// // const a9 = a4.toFixed(2);
 
-// const a9 = parseFloat(a4.toFixed(2));
-// const a9 = parseFloat(a4.toPrecision(5));
-// const a9 = parseFloat(a4.toPrecision(4));
-// const a9 = parseFloat(a4.toPrecision(3));
+// // const a9 = parseFloat(a4.toFixed(2));
+// // const a9 = parseFloat(a4.toPrecision(5));
+// // const a9 = parseFloat(a4.toPrecision(4));
+// // const a9 = parseFloat(a4.toPrecision(3));
 
-// const a4 = 9999999991111111;
-// const a9 = parseFloat(a4.toPrecision(2));
+// // const a4 = 9999999991111111;
+// // const a9 = parseFloat(a4.toPrecision(2));
 
-// console.log(a9);
-// console.log(a4);
+// // console.log(a9);
+// // console.log(a4);
 
-// console.log(a8);
+// // console.log(a8);
 
-// console.log(a9, typeof a9);
+// // console.log(a9, typeof a9);
 
-const a4 = 9999991546411;
-// const a41 = a4.toExponential();
-const a41 = a4.toExponential(2);
-const a42 = parseFloat(a41);
-const a43 = parseInt(a41);
-const a44 = Number(a41);
-const a45 = a4.toExponential();
-const a46 = parseFloat(a4);
-const a47 = parseInt(a4);
-// console.log(a4);
-// console.log(a41);
-// console.log(a42);
-// console.log(typeof a41);
-// console.log(typeof 1.0e16);
+// const a4 = 9999991546411;
+// // const a41 = a4.toExponential();
+// const a41 = a4.toExponential(2);
+// const a42 = parseFloat(a41);
+// const a43 = parseInt(a41);
+// const a44 = Number(a41);
+// const a45 = a4.toExponential();
+// const a46 = parseFloat(a4);
+// const a47 = parseInt(a4);
+// // console.log(a4);
+// // console.log(a41);
+// // console.log(a42);
+// // console.log(typeof a41);
+// // console.log(typeof 1.0e16);
 
-// console.log(a43);
-// console.log(a44);
-// console.log(a45);
-// console.log(a46);
-// console.log(a47);
+// // console.log(a43);
+// // console.log(a44);
+// // console.log(a45);
+// // console.log(a46);
+// // console.log(a47);
 
-const c1 = 65478;
-const c2 = c1.toExponential();
-const c3 = parseFloat(c2);
-// const c5 = c3.toString();
-// const c5 = c3.toString(2);
+// const c1 = 65478;
+// const c2 = c1.toExponential();
+// const c3 = parseFloat(c2);
+// // const c5 = c3.toString();
+// // const c5 = c3.toString(2);
 
-const c5 = c3.toString(32);
+// const c5 = c3.toString(32);
 
-// console.log(c1 === c3);
+// // console.log(c1 === c3);
 
-console.log(c5);
+// console.log(c5);
+
+//========================Lesson 13==============built-in constructor for string types====================
+
+const a = "HelloWorld";
+
+// console.log(a.length);
+
+// console.log(String.fromCodePoint(128514));
+// console.log(String.fromCodePoint(128515));
+
+// const b = "Å";
+
+// console.log(b);
+
+const b = "Å234324234";
+
+// console.log("Å234324234".codePointAt());
+
+// console.log(b.codePointAt());
+// console.log(b.codePointAt(0));
+// console.log(b.codePointAt(1));
+// console.log(String.fromCodePoint(197));
+
+// console.log(String.raw`www.test.com/home/catalog/category/new`);
+
+// console.log(String.raw`www.test.com\home\catalog\category\new`);
+
+// console.log(`www.test.com\home\catalog\category\new`);
+
+// console.log(a.concat(" ", "!"));
+
+// console.log(a.includes("lo"));
+// console.log(a.includes("lop"));
+
+// console.log(a.includes("He", 2));
+
+// console.log(a.includes("o", 6));
+
+console.log(a.indexOf("o", 6));
+
+// console.log(a.indexOf("r", 6));
+
+// console.log(a.indexOf("q", 6));
+
+// console.log(a.indexOf("o"));
+
+// console.log(a.indexOf("lo"));
+
+// console.log(a.lastIndexOf("o"));
+
+// console.log(a.startsWith("He"));
+// console.log(a.startsWith("el"));
+// console.log(a.startsWith("el", 1));
+
+// console.log(a.endsWith("ld"));
+// console.log(a.endsWith("ld", 10));
+// console.log(a.endsWith("ld", 9));
+
+// console.log(a.at(0));
+// console.log(a.at(1));
+
+// const c = "HelloWorld     ";
+const c = "HelloWorld";
+// console.log;
+// console.log(c.padStart(15, "Start"));
+// console.log(c.padStart(18, "Start"));
+// console.log(c.padEnd(13, "End"));
+// console.log(c.padEnd(15, "End"));
+
+// console.log(c.padStart(15, "."));
+// console.log(c.padStart(15, " "));
+
+// const c1 = "HelloWorldHelloWorld";
+// console.log(c1.padStart(15, " "));
+
+// console.log(c.repeat(5));
+
+// console.log(c.slice(2, 5));
+// console.log(c.slice(2));
+
+// console.log(c.slice(-2));
+// console.log(c.slice(-2, -1));
+// console.log(c.slice(0));
+
+// console.log(c.slice("kfgjdhfkg"));
+
+// console.log(c.substring("kfgjdhfkg"));
+
+// console.log(c.toUpperCase());
+// console.log(c.toLowerCase());
+
+const c3 = "        HelloWorld    ";
+
+console.log(c3.trim());
+console.log(c3.trimStart(), "end");
+console.log(c3.trimEnd());
