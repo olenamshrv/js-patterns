@@ -1936,7 +1936,7 @@ console.log('Test')  */
 
 //========================Lesson 13==============built-in constructor for string types====================
 
-const a = "HelloWorld";
+// const a = "HelloWorld";
 
 // console.log(a.length);
 
@@ -1947,7 +1947,7 @@ const a = "HelloWorld";
 
 // console.log(b);
 
-const b = "Å234324234";
+// const b = "Å234324234";
 
 // console.log("Å234324234".codePointAt());
 
@@ -1971,7 +1971,7 @@ const b = "Å234324234";
 
 // console.log(a.includes("o", 6));
 
-console.log(a.indexOf("o", 6));
+// console.log(a.indexOf("o", 6));
 
 // console.log(a.indexOf("r", 6));
 
@@ -1995,7 +1995,7 @@ console.log(a.indexOf("o", 6));
 // console.log(a.at(1));
 
 // const c = "HelloWorld     ";
-const c = "HelloWorld";
+// const c = "HelloWorld";
 // console.log;
 // console.log(c.padStart(15, "Start"));
 // console.log(c.padStart(18, "Start"));
@@ -2024,8 +2024,378 @@ const c = "HelloWorld";
 // console.log(c.toUpperCase());
 // console.log(c.toLowerCase());
 
-const c3 = "        HelloWorld    ";
+// const c3 = "        HelloWorld    ";
 
-console.log(c3.trim());
-console.log(c3.trimStart(), "end");
-console.log(c3.trimEnd());
+// console.log(c3.trim());
+// console.log(c3.trimStart(), "end");
+// console.log(c3.trimEnd());
+
+//========================Lesson 14==============built-in functions for arrays====================
+
+// const a = 1;
+// const b = 2;
+// const c = 3;
+
+// let list = [];
+
+// let list = [() => {}];
+
+// let list = [function name() {}];
+
+// const getOne = () => 1;
+
+// let list = [
+//   function name() {},
+//   100,
+//   "Text",
+//   null,
+//   undefined,
+//   1 + 2,
+//   5 < 6,
+//   getOne(),
+//   a,
+//   b,
+//   c,
+// ];
+
+// console.log(list);
+
+// const testArray = Array(5);
+// testArray[0] = "Start";
+// testArray[1] = 2;
+// testArray[20] = 20;
+// console.log(testArray);
+
+// const testArray = [];
+// testArray[0] = "Start";
+// testArray[1] = 2;
+// testArray[testArray.length] = 7;
+// testArray[testArray.length] = 8;
+
+// console.log(testArray);
+
+// console.log(testArray.length);
+
+// console.log(testArray[testArray.length - 1]);
+
+const testArray = [];
+testArray[0] = "Start";
+testArray[1] = 2;
+testArray[testArray.length] = 7;
+testArray[testArray.length] = 8;
+
+// testarray[null] = 9;
+// testarray["test"] = "test105";
+
+// delete testArray[0];
+// console.log(testArray);
+
+const big = [[[1], [2, 3, 4, 5], [3]], [[2]], [[3]]];
+
+// console.log(big[0][1][2]);
+
+// const location = [
+//   [100, 200],
+//   [105, 205],
+//   [110, 190],
+// ];
+
+// for (const point of location) {
+//   console.log(point);
+// }
+
+// for (const point of location) {
+//   for (const coord of point) {
+//     console.log(coord);
+//   }
+// }
+
+// for (const point in location) {
+//   console.log(point);
+// }
+
+// for (const pointIndex in location) {
+//   console.log(`${pointIndex} element of array`);
+//   console.log(location[pointIndex]);
+//   for (const coordIndex in location[pointIndex]) {
+//     // console.log("\n");
+//     // console.log(coordIndex);
+//     console.log(location[pointIndex][coordIndex]);
+//   }
+// }
+
+// for (let i = 0; i < location.length; i++) {
+//   console.log(location[i]);
+// }
+
+// for (let i = 0; i < location.length; i++) {
+//   console.log(location[i]);
+
+//   for (let j = 0; j < location[i].length; j++) {
+//     console.log(location[i][j]);
+//   }
+// }
+
+// const l1 = [];
+// const l2 = [];
+
+// console.log(l1 === l2);
+
+// const l1 = Array();
+// const l2 = Array();
+
+// console.log(l1 === l2);
+
+// const l1 = Array(1);
+// const l2 = Array(1);
+
+// console.log(l1.toString(), l2.toString());
+
+// console.log(l1.toString() === l2.toString());
+
+// const l1 = [1, 2, 3];
+// const l2 = [1, 2, 3];
+
+// console.log(l1.toString(), l2.toString());
+
+// console.log(l1.toString() === l2.toString());
+
+// console.log(l1, l2);
+
+// const l1 = [1, 3, 2];
+// const l2 = [1, 2, 3];
+
+// console.log(l1.toString() === l2.toString());
+
+// const l1 = [1, 3, 2];
+// const l2 = [1, 2, 3];
+
+// const l3 = l1;
+
+// console.log(l1.toString() === l2.toString());
+
+// console.log(l1, l3);
+
+// delete l1[0];
+
+// console.log(l3);
+
+// const location = [
+//   [100, 200],
+//   [105, 205],
+//   [110, 190],
+// ];
+
+// const loc1 = location[0];
+// const loc2 = location[1];
+
+// console.log(loc1, loc2);
+
+// const [] = location;
+
+// const [] = [a, b, c];
+
+// const [a, b] = location;
+
+// console.log(a, b);
+
+// const [a, , b] = location;
+
+// console.log(a, b);
+
+// const [a, ...rest] = location;
+
+// console.log(a, rest);
+
+//const [a, ...rest, b] = location;  // Error
+
+// const [loc1, ...rest] = location;
+// const [loc2, loc3, loc4] = rest;
+
+// console.log(loc4);
+
+// const [loc1, ...rest] = location;
+// const [loc2, loc3, loc4 = "Test"] = rest;
+
+// console.log(loc4);
+
+// const location = [
+//   [100, 200],
+//   [105, 205],
+//   [110, 190],
+//   [115, 130],
+// ];
+
+// const [loc1, ...rest] = location;
+// const [loc2, loc3, loc4 = "Test"] = rest;
+
+// console.log(loc4);
+
+// const location = [
+//   [100, 200],
+//   [105, 205],
+//   [110, 190],
+//   [115, 130],
+// ];
+
+// const [loc1, ...rest] = location;
+// const [[p1, p2], loc3, loc4 = "Test"] = rest;
+
+// console.log(p1, p2);
+
+// //============
+
+// const l1 = [1, 3, 2];
+// const l2 = [1, 2, 3];
+
+// const [...l3] = l1;
+
+// console.log(l1, l3);
+
+// delete l1[0];
+
+// console.log(l1, l3);
+
+// //============
+
+// const l1 = [1, 3, 2];
+// const l2 = [1, 2, 3];
+
+// const l3 = [...l1];
+
+// console.log(l1, l3);
+
+// delete l1[0];
+
+// console.log(l1, l3);
+
+// //============
+
+// const l1 = null;
+// const l2 = [1, 2, 3];
+
+// // const l3 = [...l1];
+
+// const l3 = [...(l1 || [])];
+
+// console.log(l1, l3);
+
+// // delete l1[0];
+
+// console.log(l1, l3);
+
+//============
+
+// const l1 = null;
+// const l2 = [1, 2, 3];
+
+// // const l3 = [...l1];
+
+// const l3 = [100, ...(l1 || [])];
+
+// console.log(l1, l3);
+
+// //============
+
+// const l1 = [1, 3, 2];
+
+// const l3 = [100, ...(l1 || [])];
+
+// delete l1[0];
+
+// console.log(l1, l3);
+
+//============
+
+// let l1 = [1, 3, 2];
+// let l2 = [1, 2, 3];
+
+// const l3 = [100, ...(l1 || [])];
+
+// delete l1[0];
+
+// console.log(l1, l2);
+
+// [l1, l2] = [l2, l1];
+
+// console.log(l1, l2);
+
+// //============
+
+// function printFullName(name, surname, lastname) {
+//   return `${name} ${surname} ${lastname}`;
+// }
+
+// console.log(printFullName("Ivan", "Myhalov", "Ivanov"));
+
+//=======================
+
+// function printFullName(...arg) {
+//   console.log(arg);
+//   return arg.toString();
+//   //   return `${name} ${surname} ${lastname}`;
+// }
+
+// console.log(printFullName("Ivan", "Myhalov", "Ivanov"));
+
+//=======================
+
+// function sumAllNum(...nums) {
+//   let sum = 0;
+
+//   for (const n of nums) {
+//     sum += n;
+//   }
+
+//   //   return sum;
+//   return [sum, nums.length];
+// }
+
+// const [sum, numLength] = sumAllNum(
+//   1,
+//   4,
+//   5,
+//   3,
+//   6,
+//   7,
+//   5,
+//   4,
+//   3,
+//   3,
+//   5,
+//   2,
+//   9,
+//   10,
+//   12,
+//   14
+// );
+
+// // console.log(sumAllNum(1, 4, 5, 3, 6, 7, 5, 4, 3, 3, 5, 2, 9, 10, 12, 14));
+
+// console.log(sum, numLength);
+
+// //=======================
+
+// function printFullName(list) {
+//   //   console.log(arg);
+//   //   return arg.toString();
+//   return `${list[0]} ${list[1]} ${list[2]}`;
+// }
+
+// console.log(printFullName(["Ivan", "Myhalov", "Ivanov"]));
+
+//=======================
+
+function printFullName([name, surname, lastname, ...arg]) {
+  //   console.log(arg);
+  //   return arg.toString();
+  //   return `${name} ${surname} ${lastname} (${arg.toString()})`;
+
+  return `${name} ${surname} ${lastname} ${
+    arg.length ? `(${arg.toString()})` : ""
+  }`;
+}
+
+// console.log(printFullName(["Ivan", "Myhalov", "Ivanov"]));
+
+console.log(printFullName(["Ivan", "Myhalov", "Ivanov", "Admin", "18"]));
