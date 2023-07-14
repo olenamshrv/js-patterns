@@ -2078,11 +2078,11 @@ console.log('Test')  */
 
 // console.log(testArray[testArray.length - 1]);
 
-const testArray = [];
-testArray[0] = "Start";
-testArray[1] = 2;
-testArray[testArray.length] = 7;
-testArray[testArray.length] = 8;
+// const testArray = [];
+// testArray[0] = "Start";
+// testArray[1] = 2;
+// testArray[testArray.length] = 7;
+// testArray[testArray.length] = 8;
 
 // testarray[null] = 9;
 // testarray["test"] = "test105";
@@ -2386,16 +2386,547 @@ const big = [[[1], [2, 3, 4, 5], [3]], [[2]], [[3]]];
 
 //=======================
 
-function printFullName([name, surname, lastname, ...arg]) {
-  //   console.log(arg);
-  //   return arg.toString();
-  //   return `${name} ${surname} ${lastname} (${arg.toString()})`;
+// function printFullName([name, surname, lastname, ...arg]) {
+//   //   console.log(arg);
+//   //   return arg.toString();
+//   //   return `${name} ${surname} ${lastname} (${arg.toString()})`;
 
-  return `${name} ${surname} ${lastname} ${
-    arg.length ? `(${arg.toString()})` : ""
-  }`;
+//   return `${name} ${surname} ${lastname} ${
+//     arg.length ? `(${arg.toString()})` : ""
+//   }`;
+// }
+
+// // console.log(printFullName(["Ivan", "Myhalov", "Ivanov"]));
+
+// console.log(printFullName(["Ivan", "Myhalov", "Ivanov", "Admin", "18"]));
+
+//========================Lesson 15==============objects====================
+
+// const a = {
+//   "null": 100,
+// };
+
+// const a = {
+//   null: 100,
+// };
+
+// console.log(a.null);
+
+// const a = {
+//   100: 100,
+// };
+
+// console.log(a);
+
+// const a = {
+//   amount: 100,
+// };
+
+// console.log(a);
+
+// const a = {
+//   amount: 100,
+//   ["text"]: "HelloWorld",
+// };
+
+// console.log(a.text);
+
+// const name = "key";
+
+// const a = {
+//   amount: 100,
+//   [name]: "HelloWorld",
+
+//   // [1+3]: "HelloWorld",
+//   [console.log()]: "HelloWorld",
+// };
+
+// console.log(a[name]);
+
+// const name = "key";
+
+// const a = {
+//   amount: 100,
+//   [console.log()]: "HelloWorld",
+// };
+
+// console.log(a[console.log()]);
+// console.log(a);
+
+//=======
+
+// const b = Object();
+
+// const b = {};
+// console.log(b);
+
+// //=====
+
+// const key = "jdfhgf";
+
+// const a = {
+//   amount: 100,
+//   [key]: "HelloWorld",
+// };
+
+// // console.log(a[key]);
+// // console.log(a.amount);
+
+// delete a.amount;
+// console.log(a);
+
+//=====
+
+// const key = "jdfhgf";
+
+// const a = {
+//   amount: 100,
+//   [key]: "HelloWorld",
+
+//   info: {
+//     name: "Ivan",
+//     age: 35,
+//   },
+// };
+
+// console.log(a.info.name);
+
+// //=====================================
+
+// const key = "jdfhgf";
+
+// const a = {
+//   amount: 100,
+//   [key]: "HelloWorld",
+
+//   [key]: {
+//     [key]: "Ivan",
+//     age: 35,
+//   },
+// };
+
+// console.log(a[key][key]);
+
+// console.log(a);
+
+//=====================================
+
+// const key = "jdfhgf";
+
+// const a = {
+//   Amount: 100,
+//   [key]: "HelloWorld",
+
+//   [key]: {
+//     [key]: "Ivan",
+//     age: 35,
+//   },
+// };
+
+// console.log(a.Amount);
+// console.log(a.amount);
+
+//=====================================
+
+// const person = {
+//   name: "Ivan",
+//   age: 25,
+//   occupation: "Розробник програмного забезпечення",
+
+//   address: {
+//     city: "Київ",
+//     street: "Вулиця Шевченка",
+//     houseNumber: 15,
+//   },
+// };
+
+// for (const key in person) {
+//   console.log(key);
+// console.log(item);
+// }
+
+// for (const key in person) {
+//   const item = person[key];
+
+//   if (typeof item === "object") {
+//     for (const key2 in item) {
+//       console.log(item[key2]);
+//     }
+//   } else {
+//     console.log(item);
+//   }
+// }
+
+// //=========
+
+// const a = { test: 1 };
+// const b = { test: 2 };
+
+// console.log(a === b);
+
+//=========
+
+// const a = { test: 1 };
+// const b = a;
+
+// console.log(a === b);
+
+//=====================================
+
+// const person = {
+//   name: "Ivan",
+//   age: 25,
+//   occupation: "Розробник програмного забезпечення",
+
+//   address: {
+//     city: "Київ",
+//     street: "Вулиця Шевченка",
+//     houseNumber: 15,
+//   },
+// };
+
+// const { name, age } = person;
+// const { age, name, address } = person;
+
+// console.log(age, name, address);
+
+// const {
+//   age,
+//   name,
+//   address: { city, street, houseNumber },
+// } = person;
+
+// console.log(age, name, city, street, houseNumber);
+
+// //=====
+
+// const {
+//   age,
+//   name,
+//   address: { city, street, zipcode = 726354 },
+//   ...rest
+// } = person;
+
+// console.log(age, name, city, street, rest, zipcode);
+
+// //=====
+
+// const person = {
+//   name: "Ivan",
+//   age: 25,
+//   occupation: "Розробник програмного забезпечення",
+
+//   address: {
+//     city: "Київ",
+//     street: "Вулиця Шевченка",
+//     houseNumber: 15,
+//   },
+// };
+
+// const {
+//   age,
+//   address: { city, street, zipcode = 726354 },
+//   ...rest
+// } = person;
+
+// console.log(age, city, street, rest, zipcode);
+
+// function getAddress(arg1) {
+//   console.log(arg1);
+//   return `Ваша адреса: `;
+// }
+
+// getAddress("Київ", "Вулиця Шевченка", 10, 726354);
+
+// getAddress("Київ", null, 10, 726354);
+// getAddress("Київ", undefined, 10, 726354);
+
+// getAddress(...person);
+
+// const c = [1, 2, 3];
+// getAddress(...c);
+
+// function getAddress({
+//   address: { city, street, houseNumber, zipcode = 1000 },
+// }) {
+//   return `Ваша адреса: ${city} ${street} ${houseNumber} ${zipcode}`;
+// }
+
+// const test = getAddress(person);
+
+// console.log(test);
+
+// //=====
+
+// const person = {
+//   name: "Ivan",
+//   age: 25,
+//   occupation: "Розробник програмного забезпечення",
+
+//   address: {
+//     city: "Київ",
+//     // street: "Вулиця Шевченка",
+//     houseNumber: 15,
+//   },
+// };
+
+// function getAddress({
+//   address: { city, street = "Не вказано", houseNumber, zipcode = 1000 },
+// }) {
+//   return `Ваша адреса: ${city} ${street} ${houseNumber} ${zipcode}`;
+// }
+
+// const test = getAddress(person);
+
+// console.log(test);
+
+// console.log({ address: { street: "Hello", city: "Київ" } });
+
+//=====
+
+// const person = {
+//   name: "Ivan",
+//   age: 25,
+//   occupation: "Розробник програмного забезпечення",
+
+//   address: {
+//     city: "Київ",
+//     // street: "Вулиця Шевченка",
+//     houseNumber: 15,
+//   },
+// };
+
+// function getAddress({
+//   address: { city, street = "Не вказано", houseNumber, zipcode = 1000 } = {},
+// })
+// function getAddress({
+//   address: { city, street = "Не вказано", houseNumber, zipcode = 1000 } = {
+//     city: "Не вказано",
+//     street: "Не вказано",
+//     houseNumber: "Не вказано",
+//     zipcode: "Не вказано",
+//   },
+// }) {
+//   return `Ваша адреса: ${city} ${street} ${houseNumber} ${zipcode}`;
+// }
+
+// const test = getAddress({ city: "Київ" });
+
+// console.log(test);
+
+// //==========
+
+// function getAddress({ address }) {
+//   if (address) {
+//     const {
+//       city,
+//       street = "Не вказано",
+//       houseNumber,
+//       zipcode = 1000,
+//     } = address;
+
+//     return `Ваша адреса: ${city} ${street} ${houseNumber} ${zipcode}`;
+//   }
+
+//   return `Немає даних`;
+// }
+
+// const test = getAddress({ city: "Київ" });
+
+// console.log(test);
+
+// //==========
+
+// const role = { value: "admin", status: 3 };
+
+// const person = {
+//   name: "Ivan",
+//   age: 25,
+//   occupation: "Розробник програмного забезпечення",
+
+//   ...role,
+
+//   address: {
+//     city: "Київ",
+//     // street: "Вулиця Шевченка",
+//     houseNumber: 15,
+//   },
+// };
+
+// console.log(person);
+
+// //==========
+
+// const role = { value: "admin", status: 3 };
+
+// const person = {
+//   name: "Ivan",
+//   age: 25,
+//   occupation: "Розробник програмного забезпечення",
+
+//   role,
+
+//   address: {
+//     city: "Київ",
+//     // street: "Вулиця Шевченка",
+//     houseNumber: 15,
+//   },
+// };
+
+// console.log(person);
+
+// console.log(person.surname, typeof person.surname);
+// console.log(!person.surname, typeof !person.surname);
+// console.log(!!person.surname, typeof !!person.surname);
+
+// console.log("name" in person);
+// console.log("named" in person);
+
+// //==========
+
+// const role = { value: "admin", status: 3 };
+
+// const person = {
+//   name: "Ivan",
+//   age: 25,
+//   occupation: "Розробник програмного забезпечення",
+
+//   role,
+
+//   address: {
+//     city: "Київ",
+//     // street: "Вулиця Шевченка",
+//     houseNumber: 15,
+//   },
+
+//   // getAddress: function () {
+//   //   return "Адреса клієнта";
+//   // },
+
+//   // getAddress: function () {
+//   //   return person.address;
+//   // },
+
+//   getAddress: function () {
+//     return this.address;
+//   },
+// };
+
+// console.log(person.getAddress());
+
+// //==========
+
+// const role = { value: "admin", status: 3 };
+
+// const person = {
+//   name: "Ivan",
+//   age: 25,
+//   occupation: "Розробник програмного забезпечення",
+
+//   role,
+
+//   address: {
+//     city: "Київ",
+//     // street: "Вулиця Шевченка",
+//     houseNumber: 15,
+//   },
+
+//   // getAddress: function () {
+//   //   return "Адреса клієнта";
+//   // },
+
+//   // getAddress: function () {
+//   //   return person.address;
+//   // },
+
+//   getAddress: function () {
+//     return this.address;
+//   },
+
+//   // const getAddress = function () {
+//   //   return this.address;
+//   // },
+
+//   // getAddress: () => {     // won't work
+//   //   return this.address;
+//   // },
+// };
+
+// // const person2 = person;
+// const person2 = { ...person };
+// delete person.address;
+// console.log(person.getAddress());
+// console.log(person2.getAddress());
+
+//============================================
+
+// const b = String("Test");
+
+// console.log(b);
+
+// const b = "Test";
+
+// Number.prototype.toString = function () {
+//   console.log(this);
+
+//   return `Число: ${this}`;
+// };
+
+// const b = 1;
+
+// const c = b.toString();
+
+// console.log(c);
+
+Number.prototype.toOwnString = function () {
+  console.log(this);
+
+  return `Число: ${this}`;
+};
+
+const b = 1;
+
+const c = b.toOwnString();
+
+console.log(c);
+
+// //===============
+
+// function Test() {
+//   return "Hello" + this.world;
+// }
+
+// Test.world = "World";
+
+// // console.log(Test());
+
+// console.log(Test.world);
+
+// //===============
+
+// Test.world = "World";
+
+// function Test() {
+//   return "Hello" + this.world;
+// }
+
+// console.log(Test());
+
+// // console.log(Test.world);
+
+//===============
+
+// Test.world = "World";
+
+function Test() {
+  this.world = "World";
+  return "Hello" + this.world;
 }
 
-// console.log(printFullName(["Ivan", "Myhalov", "Ivanov"]));
+// console.log(Test());
 
-console.log(printFullName(["Ivan", "Myhalov", "Ivanov", "Admin", "18"]));
+console.log(Test.world);
+console.log(Test().world);
+
+Test.hello = "Hello";
+console.log(Test.hello);
