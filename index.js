@@ -2090,7 +2090,7 @@ console.log('Test')  */
 // delete testArray[0];
 // console.log(testArray);
 
-const big = [[[1], [2, 3, 4, 5], [3]], [[2]], [[3]]];
+// const big = [[[1], [2, 3, 4, 5], [3]], [[2]], [[3]]];
 
 // console.log(big[0][1][2]);
 
@@ -2878,17 +2878,17 @@ const big = [[[1], [2, 3, 4, 5], [3]], [[2]], [[3]]];
 
 // console.log(c);
 
-Number.prototype.toOwnString = function () {
-  console.log(this);
+// Number.prototype.toOwnString = function () {
+//   console.log(this);
 
-  return `Число: ${this}`;
-};
+//   return `Число: ${this}`;
+// };
 
-const b = 1;
+// const b = 1;
 
-const c = b.toOwnString();
+// const c = b.toOwnString();
 
-console.log(c);
+// console.log(c);
 
 // //===============
 
@@ -2918,15 +2918,324 @@ console.log(c);
 
 // Test.world = "World";
 
-function Test() {
-  this.world = "World";
-  return "Hello" + this.world;
-}
+// function Test() {
+//   this.world = "World";
+//   return "Hello" + this.world;
+// }
 
-// console.log(Test());
+// // console.log(Test());
 
-console.log(Test.world);
-console.log(Test().world);
+// console.log(Test.world);
+// console.log(Test().world);
 
-Test.hello = "Hello";
-console.log(Test.hello);
+// Test.hello = "Hello";
+// console.log(Test.hello);
+
+//======Lesson 16=====================Symbol type==============
+
+// const a = { name: "Olga", age: 34 };
+
+// //.................
+
+// const key = "name";
+
+// a[key] = "user";
+
+// console.log(a);
+
+// //===
+
+// const phoneBook = {
+//   0: 1,
+//   olga: +380953432154,
+// };
+
+// //.................
+
+// // function addToPhoneBook(value, key) {}
+// function addToPhoneBook(phone, id) {
+//   const key = Symbol(id + phoneBook[0]);
+//   phoneBook[key] = phone;
+
+//   phoneBook[0]++;
+
+//   return key;
+// }
+
+// // const olga = Symbol("olga");
+
+// // const olga1Id = addToPhoneBook("+38098723847382", "olga");
+// const olga1Id = addToPhoneBook("+38098723847382", "olga@kfkf.com");
+
+// //.................
+
+// // const olga2Id = addToPhoneBook("+3809875847383", "olga");
+
+// const olga2Id = addToPhoneBook("+3809875847383", "olga@kfkf.com");
+
+// console.log(phoneBook);
+
+// // const sym1 = Symbol("test");
+// // const sym2 = Symbol("test");
+
+// // console.log(sym1 === sym2);
+
+// // console.log(phoneBook["olga1"]);
+// // console.log(phoneBook["Symbol(olga1)"]);
+
+// console.log(phoneBook[olga1Id]);
+
+// console.log(olga1Id.description);
+
+// //===
+
+// const user = {
+//   name: "Olga",
+//   id: 12364,
+//   bookId: null,
+
+//   getPhone(book) {
+//     return book[this.bookId];
+//   },
+// };
+
+// const phoneBook = {
+//   0: 1,
+//   olga: +380953432154,
+// };
+
+// //.................
+
+// function addToPhoneBook(phone, user) {
+//   const key = Symbol(user.id);
+//   phoneBook[key] = phone;
+
+//   phoneBook[0]++;
+
+//   user.bookId = key;
+// }
+
+// /// .....
+
+// addToPhoneBook("+38098723847382", user);
+
+// /// .....
+
+// addToPhoneBook("+5509875847383", user);
+
+// /// .....
+
+// console.log(user.getPhone(phoneBook));
+
+// console.log(phoneBook);
+
+//===
+
+// const user = {
+//   name: "Olga",
+//   id: 12364,
+//   bookId: null,
+
+//   getPhone(book) {
+//     return book[this.bookId];
+//   },
+// };
+
+// const phoneBook = {
+//   0: 1,
+//   olga: +380953432154,
+// };
+
+// //.................
+
+// function addToPhoneBook(phone, user) {
+//   const key = Symbol(user.id);
+//   phoneBook[key] = phone;
+
+//   phoneBook[0]++;
+
+//   user.bookId = key;
+// }
+
+// /// .....
+
+// addToPhoneBook("+38098723847382", user);
+
+// /// .....
+
+// addToPhoneBook("+5509875847383", user);
+
+/// .....
+
+// const a = Symbol("1");
+// const b = Symbol("1");
+
+// console.log(a === b);
+
+// console.log(String(a) === String(b));
+// console.log(String(a), String(b));
+
+// console.log(a.description === b.description);
+// console.log(String(a.description), String(b.description));
+// console.log(a.description, b.description);
+
+// console.log(a.toString() === b.toString());
+// console.log(a.toString(), b.toString());
+
+//====
+
+// const a = Symbol.for("1");
+// const b = Symbol.for("1");
+
+// console.log(a === b);
+// console.log(a, b);
+
+//=============
+
+// const user = {
+//   name: "Olga",
+//   id: 12364,
+//   bookId: null,
+
+//   getPhone(book) {
+//     return book[this.bookId];
+//   },
+// };
+
+// const phoneBook = {
+//   me: +380953432154,
+//   name: "Phone Book",
+// };
+
+// //.................
+
+// function addToPhoneBook(phone, user) {
+//   const key = Symbol.for(user.id);
+//   phoneBook[key] = phone;
+
+//   phoneBook[0]++;
+
+//   user.bookId = key;
+// }
+
+// /// .....
+
+// addToPhoneBook("+38098723847382", user);
+
+// /// .....
+
+// addToPhoneBook("+5509875847378", user);
+// addToPhoneBook("+5509875847379", user);
+// addToPhoneBook("+5509875847380", user);
+// addToPhoneBook("+5509875847381", user);
+// addToPhoneBook("+5509875847382", user);
+// addToPhoneBook("+5509875847383", user);
+
+// // console.log(user.getPhone(phoneBook));
+
+// // console.log(phoneBook);
+
+// //==
+
+// const symId = user.bookId;
+
+// // console.log(Symbol.keyFor(symId));
+
+// console.log("--------------------------");
+
+// for (const key in phoneBook) {
+//   console.log(key);
+// }
+
+// console.log(phoneBook);
+
+//==========did not work===============================================
+
+// let range = {
+//   from: 1,
+//   to: 5,
+
+//   // [Symbol.iterator] = function (){}
+
+//   [Symbol.iterator]() {
+//     this.current = this.from;
+
+//     return {
+//       next() {
+//         if (this.current <= this.to) {
+//           return { done: false, value: this.current++ };
+//         } else {
+//           return { done: true };
+//         }
+
+//         return { done, value };
+//       },
+//     };
+//   },
+// };
+
+// for (let num of range) {
+//   console.log(num);
+// }
+
+// //========================================================
+
+// let range = {
+//   from: 1,
+//   to: 5,
+
+//   [Symbol.iterator]() {
+//     this.current = this.from;
+
+//     return this;
+//   },
+
+//   next() {
+//     return this.current <= this.to
+//       ? { done: false, value: this.current++ }
+//       : { done: true };
+//   },
+// };
+
+// // for (let num of range) {
+// //   console.log(num);
+// // }
+
+// const iterator = range[Symbol.iterator]();
+
+// do {
+//   console.log(iterator.current);
+//   result = iterator.next();
+// } while (!result.done);
+
+//========================================================
+
+let range = {
+  from: 1,
+  to: 5,
+
+  [Symbol.iterator]() {
+    this.current = this.from;
+
+    return this;
+  },
+
+  next() {
+    return this.current <= this.to
+      ? { done: false, value: this.current++ }
+      : { done: true };
+  },
+};
+
+// for (let num of range) {
+//   console.log(num);
+// }
+
+const arr = [1, 2, 3, 4, 5];
+const iterator = arr[Symbol.iterator]();
+
+result = iterator.next();
+do {
+  console.log(result.value);
+  result = iterator.next();
+} while (!result.done);
