@@ -3210,32 +3210,350 @@ console.log('Test')  */
 
 //========================================================
 
-let range = {
-  from: 1,
-  to: 5,
+// let range = {
+//   from: 1,
+//   to: 5,
 
-  [Symbol.iterator]() {
-    this.current = this.from;
+//   [Symbol.iterator]() {
+//     this.current = this.from;
 
-    return this;
-  },
+//     return this;
+//   },
 
-  next() {
-    return this.current <= this.to
-      ? { done: false, value: this.current++ }
-      : { done: true };
-  },
+//   next() {
+//     return this.current <= this.to
+//       ? { done: false, value: this.current++ }
+//       : { done: true };
+//   },
+// };
+
+// // for (let num of range) {
+// //   console.log(num);
+// // }
+
+// const arr = [1, 2, 3, 4, 5];
+// const iterator = arr[Symbol.iterator]();
+
+// result = iterator.next();
+// do {
+//   console.log(result.value);
+//   result = iterator.next();
+// } while (!result.done);
+
+//======Lesson 17======Arrays============================================
+
+// console.log(Array.from("Hello World"));
+
+// console.log(Array.from(7234324234));
+
+// console.log(Array.from({ a: 1, b: 2, c: 3, d: 4, e: 5 }));
+
+// console.log(
+//   Array.from(
+//     {
+//       0: "Hello",
+//       1: "2",
+//       2: "!!!",
+//       length: 3,
+//     },
+//     (elem, index) => {
+//       console.log(elem, index);
+//       return elem;
+//     }
+//   )
+// );
+
+//=====
+
+const obj = {
+  0: "Hello",
+  1: "2",
+  2: "!!!",
+  length: 3,
+  prefix: "():",
 };
 
-// for (let num of range) {
-//   console.log(num);
-// }
+const arr = Array.from(
+  obj,
+  function (elem, index) {
+    // console.log("length", this.length);
+    // console.log(this);
+    // console.log(elem, index);
+    // return elem;
 
-const arr = [1, 2, 3, 4, 5];
-const iterator = arr[Symbol.iterator]();
+    return `${this.prefix}${elem}`;
+  },
+  obj
+);
 
-result = iterator.next();
-do {
-  console.log(result.value);
-  result = iterator.next();
-} while (!result.done);
+// console.log(Array.isArray(arr));
+
+// console.log(Array.isArray("arrokoio"));
+
+// console.log(Array.isArray(obj));
+
+///======================
+
+// console.log(Array.of(1, 2, 3, 4, 5));
+
+// console.log([1, 2, 3, 4, 5]);
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+
+// console.log(Array.of(arr1, arr2));
+
+// console.log(Array.of(...arr1, ...arr2));
+// console.log([...arr1, ...arr2]);
+
+// console.log(arr1.at(1));
+// console.log(arr1.at(10));
+
+//===
+
+// let arr1 = [1, 2, 3];
+// const arr3 = arr1;
+
+// arr1 = [...arr1, 10];
+
+// console.log(arr3, arr1);
+
+// arr1.push(10, 20, 30);
+// console.log(arr3, arr1);
+
+// console.log(arr1.push(10, 20, 30)); // всього елементів
+// console.log(arr1);
+
+// console.log(arr1.push(10, 20, 30) - arr1.length);
+
+// console.log(-(arr1.length - arr1.push(10, 20, 30)));
+
+// //======
+
+// console.log(arr1.pop());
+// console.log(arr1);
+
+//==============
+
+// let arr1 = [1, 2, 3];
+
+// console.log(arr1.shift());
+// console.log(arr1);
+
+// console.log(arr1.unshift(0, 1));
+// console.log(arr1);
+
+//==========================
+
+// const arr2 = [4, 5, 3.5, 5, 18, 23, 5, 6];
+
+// console.log(arr2.includes(5));
+// console.log(arr2.includes(7));
+
+// console.log(arr2.indexOf(5));
+// console.log(arr2.indexOf(50)); // -1
+
+// console.log(arr2.lastIndexOf(5));
+
+//==============================
+
+// let arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 18, 23, 5, 6];
+
+// // const arr3 = [...arr1, ...arr2];
+// // console.log(arr3);
+
+// const arr3 = arr1.concat(...arr2);
+// console.log(arr3);
+
+//==============================
+
+// let arr1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// console.log(arr1);
+
+// // arr1.copyWithin(2, 6, 9);
+
+// // console.log(arr1);
+
+// arr1.fill(2, 6, 9);
+
+// arr1.fill("2", 6, 9);
+
+// console.log(arr1);
+
+// arr1.fill(123, 6, 9);
+
+// console.log(arr1);
+
+// arr1.reverse();
+
+// console.log(arr1);
+
+// arr1.filter(()=>{});
+
+//=====
+
+// let arr1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// // const sortedArr = arr1.filter((value, index, array) => value % 2);
+
+// // console.log(sortedArr);
+
+// const filteredArr = arr1.filter((value, index, array) => value % 2 === 0);
+
+// console.log(filteredArr);
+
+//=====================================
+
+// let arr1 = [0, 55, 60, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// // const sortedArr = arr1.sort();
+
+// // console.log(sortedArr);
+
+// const sortedArr = [1, 2, 3, 4, 5, 10, 20, 30, 40, 50].sort();
+
+// console.log(sortedArr);
+
+//===
+
+let arr1 = [0, 55, 60, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// const sortedArr = arr1.sort();
+
+// console.log(sortedArr);
+
+// const sortFn = (elem1, elem2) => elem1 - elem2;
+
+// const sortedArr = [1, 2, 3, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr);
+
+// //==
+
+// const sortFn = (elem1, elem2) => -(elem1 - elem2);
+
+// const sortedArr = [1, 2, 3, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr); // [  50, 40, 30, 20, 10,   5,  4,  3,  2,  1]
+
+//==
+
+// const sortFn = (elem1, elem2) => elem2 - elem1;
+
+// const sortedArr = [1, 2, 3, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr);
+
+//===
+
+// const sortFn = (elem1, elem2) => elem2 - elem1;
+
+// const sortedArr = [20, 1, 2, 30, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr);
+
+// const sortFn = (elem1, elem2) => (elem1 < elem2 ? 1 : -1);
+
+// const sortedArr = [20, 1, 2, 30, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr);
+
+// //==
+
+// const sortFn = (elem1, elem2) => {
+//   return elem1 > elem2 ? 1 : -1;
+// };
+
+// const sortedArr = [20, 1, 2, 30, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr);
+
+// //==
+
+// const sortFn = (elem1, elem2) => {
+//   return elem1 < elem2 ? 1 : -1;
+// };
+
+// const sortedArr = [20, 1, 2, 30, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr);
+
+// //==
+
+// const sortFn = (elem1, elem2) => {
+//   if (elem1 === 10) {
+//     return 1;
+//   }
+//   return elem1 < elem2 ? 1 : -1;
+// };
+
+// const sortedArr = [20, 1, 2, 30, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr);
+
+// //==
+
+// const sortFn = (elem1, elem2) => {
+//   if (elem1 % 2 === 0) {
+//     return 1;
+//   }
+//   return elem1 < elem2 ? 1 : -1;
+// };
+
+// const sortedArr = [20, 1, 2, 30, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr);
+
+// //==
+
+// const sortFn = (elem1, elem2) => {
+//   let result = elem1 - elem2;
+//   if (elem1 % 2 === 0) {
+//     result += 10;
+//   }
+//   // return elem1 < elem2 ? 1 : -1;
+
+//   return result;
+// };
+
+// const sortedArr = [20, 1, 2, 30, 4, 5, 10, 20, 30, 40, 50].sort(sortFn);
+
+// console.log(sortedArr);
+
+// //==
+
+// const sortFn = (elem1, elem2) => {
+//   if (elem1 % 2 === elem2 % 2) {
+//     return 0;
+//   } else if (elem1 % 2 !== 0 && elem2 % 2 === 0) {
+//     return 1;
+//   } else {
+//     return -1;
+//   }
+// };
+
+// const sortedArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].sort(
+//   sortFn
+// );
+
+// // console.log(sortedArr);
+
+// console.log(["Arabic", "Info", "Aar", "Zero", "City"].sort());
+
+//=========================
+
+// const arr2 = [4, 5, 18, 23, 5, 6];
+
+// console.log(arr2.every((elem, index, array) => elem >= 0));
+
+//==
+
+// const arr2 = [4, -5, 18, 23, 5, 6];
+
+const arr2 = [4, -5, -12];
+
+console.log(arr2.every((elem, index, array) => elem >= 0));
+
+console.log(arr2.some((elem, index, array) => elem >= 0));
