@@ -3265,26 +3265,26 @@ console.log('Test')  */
 
 //=====
 
-const obj = {
-  0: "Hello",
-  1: "2",
-  2: "!!!",
-  length: 3,
-  prefix: "():",
-};
+// const obj = {
+//   0: "Hello",
+//   1: "2",
+//   2: "!!!",
+//   length: 3,
+//   prefix: "():",
+// };
 
-const arr = Array.from(
-  obj,
-  function (elem, index) {
-    // console.log("length", this.length);
-    // console.log(this);
-    // console.log(elem, index);
-    // return elem;
+// const arr = Array.from(
+//   obj,
+//   function (elem, index) {
+//     // console.log("length", this.length);
+//     // console.log(this);
+//     // console.log(elem, index);
+//     // return elem;
 
-    return `${this.prefix}${elem}`;
-  },
-  obj
-);
+//     return `${this.prefix}${elem}`;
+//   },
+//   obj
+// );
 
 // console.log(Array.isArray(arr));
 
@@ -3418,7 +3418,7 @@ const arr = Array.from(
 
 //===
 
-let arr1 = [0, 55, 60, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let arr1 = [0, 55, 60, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // const sortedArr = arr1.sort();
 
@@ -3552,8 +3552,565 @@ let arr1 = [0, 55, 60, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // const arr2 = [4, -5, 18, 23, 5, 6];
 
-const arr2 = [4, -5, -12];
+// const arr2 = [4, -5, -12];
 
-console.log(arr2.every((elem, index, array) => elem >= 0));
+// console.log(arr2.every((elem, index, array) => elem >= 0));
 
-console.log(arr2.some((elem, index, array) => elem >= 0));
+// console.log(arr2.some((elem, index, array) => elem >= 0));
+
+//////////////////////////////////////////////////////////////////////////
+
+//==============Lesson 18======Arrays==Part 2===========================
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// let age = 0;
+
+// const userBigAge = userList.find((user, index, array) => {
+//   if (user.age > age) {
+//   }
+// });
+
+// const userBigAge = userList.find(({ age: userAge }, index, array) => {
+//   if (userAge > age) {
+//     age = userAge;
+//   }
+// });
+
+// console.log(age);
+
+// const userBigAge = userList.sort((user1, user2) => {
+//   return user2.age - user1.age;
+// });
+
+// console.log(userBigAge);
+// console.log(userBigAge[0]);
+
+// //=====
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// let minAge = 0;
+
+// const userBigAge = userList.find(({ age }) => age >= 30);
+
+// console.log(userBigAge);
+
+// //=====
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// let minAge = 50;
+
+// // const userBigAge = userList.findIndex(({ age }) => age >= minAge);
+// const userBigAge = userList.find(({ age }) => age >= minAge);
+
+// console.log(userBigAge);
+
+//=====
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// let minAge = 30;
+
+// const userBigAge = userList.findLastIndex(({ age }) => age >= minAge);
+// // const userBigAge = userList.findLast(({ age }) => age >= minAge);
+
+// console.log(userBigAge);
+
+// //========================================================
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// console.log(userList.keys());
+
+//========================================================
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// const iter = userList.values();
+
+// console.log(iter);
+// // console.log(iter[0]);
+// // console.log(iter[1]);
+
+// const result = iter.next();
+
+// console.log(result);
+
+// for (const elem of iter) {
+//   console.log(elem);
+// }
+
+//========================================================
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// // console.log(userList.toString());
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// console.log(arr.toString());
+
+// console.log(arr.join(""));
+// console.log(arr.join(" "));
+// console.log(arr.join("... "));
+
+//========================================================
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// console.log(arr);
+
+// const arrSmall = arr.splice(1);
+
+// console.log(arrSmall);
+// console.log(arr);
+
+// //=========================
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// console.log(arr);
+
+// const arrSmall = arr.splice(1, 2);
+
+// console.log(arrSmall);
+// console.log(arr);
+
+// //=========================
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// console.log(arr);
+
+// // const arrSmall = arr.splice(1, 2, "Tea", "Cheese");
+// // const arrSmall = arr.splice(1, 2, "Tea", "Cheese", "Coffe");
+
+// const arrSmall = arr.splice(1, 2, ...userList);
+
+// console.log(arrSmall);
+// console.log(arr);
+
+// //=========================
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// console.log(arr);
+
+// // const arrSmall = arr.splice(1, 2, "Tea", "Cheese");
+// // const arrSmall = arr.splice(1, 2, "Tea", "Cheese", "Coffe");
+
+// const arrSmall = [...arr].splice(1, 2, ...userList);
+
+// console.log(arrSmall);
+// console.log(arr);
+
+// //=========================
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// console.log(arr);
+
+// // const arrSmall = arr.splice(1, 2, "Tea", "Cheese");
+// // const arrSmall = arr.splice(1, 2, "Tea", "Cheese", "Coffe");
+
+// const arrSmall = arr.splice(1, 0, ...userList);
+
+// console.log(arrSmall);
+// console.log(arr);
+
+//=========================
+
+// const userList = [
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+//   { id: 6412, name: "Anton", age: 41 },
+// ];
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// console.log(arr);
+
+// // const arrSmall = arr.splice(1, 2, "Tea", "Cheese");
+// // const arrSmall = arr.splice(1, 2, "Tea", "Cheese", "Coffe");
+
+// const arrSmall = arr.slice(1, 3);
+
+// console.log(arrSmall);
+// console.log(arr);
+
+// //==========================================
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// const userList = [
+//   { id: 6412, name: "Anton", age: 41 },
+//   { id: 1, name: "Diana", age: 19 },
+//   { id: 54, name: "Ivan", age: 34 },
+// ];
+
+// // const result = userList.reduce((num, user, userIndex, array) => {
+// //   console.log(num);
+
+// //   return num * 2;
+// // }, 0);
+
+// const result = userList.reduce((num, user, userIndex, array) => {
+//   console.log(num, user.age);
+
+//   return user.age > num ? user.age : num;
+
+//   //   return num * 2;
+// }, 1);
+
+// console.log(result);
+
+// //==========================================
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// const userList = [
+//   { id: 6412, name: "Anton", age: 41, balance: 300 },
+//   { id: 1, name: "Diana", age: 19, balance: 0 },
+//   { id: 54, name: "Ivan", age: 34, balance: 10700 },
+// ];
+
+// // const result = userList.reduce((num, user, userIndex, array) => {
+// //   console.log(num, user.age);
+
+// //   return user.age > num ? user.age : num;
+// // }, 1);
+
+// // console.log(result);
+
+// const totalBalance = userList.reduce((num, user) => num + user.balance, 0);
+
+// console.log(totalBalance);
+
+// //==========================================
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// const userList = [
+//   { id: 6412, name: "Anton", age: 41, balance: 300 },
+//   { id: 1, name: "Diana", age: 19, balance: 0 },
+//   { id: 54, name: "Ivan", age: 34, balance: 10700 },
+// ];
+
+// const result = userList.reduceRight((num, user, userIndex, array) => {
+//   console.log(num, user.age);
+
+//   if (num > 100) return num;
+//   return user.age > num ? user.age : num;
+// }, 1);
+
+// console.log(result);
+
+// const totalBalance = userList.reduce((num, user) => num + user.balance, 0);
+
+// console.log(totalBalance);
+
+//=============================================
+
+//==========================================
+
+// const arr = ["Apple", "Hotdog", "Bread", "Milk"];
+
+// const userList = [
+//   { id: 6412, name: "Anton", age: 41, balance: 300 },
+//   { id: 1, name: "Diana", age: 19, balance: 0 },
+//   { id: 54, name: "Ivan", age: 34, balance: 10700 },
+// ];
+
+// const result = userList.reverse().reduce((num, user, userIndex, array) => {
+//   console.log(num, user.age);
+
+//   if (num > 100) return num;
+//   return user.age > num ? user.age : num;
+// }, 1);
+
+// console.log(result);
+
+//==========================================
+
+const userList = [
+  { id: 6412, name: "Anton", age: 41, balance: 300 },
+  { id: 1, name: "Diana", age: 19, balance: 0 },
+  { id: 54, name: "Ivan", age: 34, balance: 10700 },
+];
+
+// userList.map((user, index, array) => {
+//   return user;
+// });
+
+// userList.map((user, index, array) => {
+//   return 1;
+// });
+
+// console.log(userList);
+
+//===
+
+// const result = userList.map((user, index, array) => {
+//   user.balanceLimit = 1000 - user.balance;
+
+//   if (user.balanceLimit < 0) {
+//     user.balanceLimit = 0;
+//   }
+//   //   return 1;
+//   //   return user.name;
+//   return user;
+// });
+
+// console.log(result);
+// console.log(result.join(", "));
+
+// console.log(result);
+// console.log(userList);
+
+//===================================
+
+// const flatArray = [[[[[[[[[[[[[[[100]]]]]]]]]]]]]]];
+
+// const flatArray = [
+//   [100, 200],
+//   [300, 400],
+//   [500, 600],
+// ];
+
+// const flatArray = [
+//   [
+//     [100, 150],
+//     [200, 250],
+//   ],
+//   [300, 400],
+//   [500, 600],
+// ];
+
+// console.log(flatArray.flat());
+// console.log(flatArray.flat(2));
+
+//====
+
+// const flatArray = [
+//   [
+//     [
+//       [
+//         [
+//           [
+//             [
+//               [
+//                 [
+//                   [
+//                     [
+//                       [
+//                         [
+//                           [
+//                             [
+//                               [100, 150],
+//                               [200, 250],
+//                             ],
+//                           ],
+//                         ],
+//                       ],
+//                     ],
+//                   ],
+//                 ],
+//               ],
+//             ],
+//           ],
+//         ],
+//       ],
+//     ],
+//   ],
+//   [300, 400],
+//   [500, 600],
+// ];
+
+// console.log(flatArray.flat(50));
+
+//=====
+
+// const flatArray = [
+//   [100, 250],
+//   [300, 480],
+//   [500, 670],
+// ];
+
+// console.log(flatArray.map((el) => el[0] - el[1]));
+
+// console.log(flatArray.map((el) => [...el, el[0] - el[1]]));
+
+// console.log(flatArray.map((el) => [...el, el[0] - el[1]]).flat());
+
+// console.log(flatArray.flatMap((el) => [...el, el[0] - el[1]]));
+
+// //=================
+
+// const flatArray = [
+//   [
+//     [100, 250],
+//     [120, 290],
+//   ],
+//   [
+//     [300, 480],
+//     [500, 670],
+//   ],
+// ];
+
+// const result = flatArray.map((el) => {
+//   console.log(el);
+
+//   el.map((it) => {
+//     console.log(it);
+
+//     return it[0] - it[1];
+//   });
+
+//   return el;
+// });
+
+// //=================
+
+// const flatArray = [
+//   [
+//     [100, 250],
+//     [120, 290],
+//   ],
+//   [
+//     [300, 480],
+//     [500, 670],
+//   ],
+// ];
+
+// const result = flatArray.map((el) => {
+//   return el.map((it) => {
+//     return it[0] - it[1];
+//   });
+// });
+
+// console.log(result);
+
+// //=================
+
+// const flatArray = [
+//   [
+//     [100, 250],
+//     [120, 290],
+//   ],
+//   [
+//     [300, 480],
+//     [500, 670],
+//   ],
+// ];
+
+// const result = flatArray.map((el) => {
+//   const newArr = el.map((it) => {
+//     return it[0] - it[1];
+//   });
+
+//   console.log(newArr);
+
+//   return newArr;
+// });
+
+// // console.log(result);
+
+// //=================
+
+// const flatArray = [
+//   [
+//     [100, 250],
+//     [120, 290],
+//   ],
+//   [
+//     [300, 480],
+//     [500, 670],
+//   ],
+// ];
+
+// const result = flatArray
+//   .map((el) => {
+//     return el.map((it) => {
+//       return it[0] - it[1];
+//     });
+
+//     console.log(newArr);
+//   })
+//   .flat();
+
+// console.log(result);
+
+//=================
+
+const flatArray = [
+  [
+    [100, 250],
+    [120, 290],
+  ],
+  [
+    [300, 480],
+    [500, 670],
+  ],
+];
+
+const result = flatArray.flatMap((el) => {
+  return el.map((it) => {
+    return it[0] - it[1];
+  });
+
+  console.log(newArr);
+});
+
+console.log(result);
+
+result.forEach((elem, index, array) => {
+  console.log(elem);
+});
