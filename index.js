@@ -3,7 +3,7 @@
 
 // console.log('Hello world'); console.log('Test');
 
-/*  console.log('Hello world') 
+/*  console.log('Hello world')
 console.log('Test')  */
 
 // {
@@ -4090,27 +4090,312 @@ const userList = [
 
 //=================
 
-const flatArray = [
-  [
-    [100, 250],
-    [120, 290],
-  ],
-  [
-    [300, 480],
-    [500, 670],
-  ],
+// const flatArray = [
+//   [
+//     [100, 250],
+//     [120, 290],
+//   ],
+//   [
+//     [300, 480],
+//     [500, 670],
+//   ],
+// ];
+
+// const result = flatArray.flatMap((el) => {
+//   return el.map((it) => {
+//     return it[0] - it[1];
+//   });
+
+//   console.log(newArr);
+// });
+
+// console.log(result);
+
+// result.forEach((elem, index, array) => {
+//   console.log(elem);
+// });
+
+//=====================Lesson 19====built-in opportunities for objects===================================
+
+// const article = {
+//   id: 10542,
+//   title: "My article",
+//   description: "This is info about article",
+//   categoryId: 1234,
+//   likeAmount: 421,
+// };
+
+// articlePhoto = {
+//   photoUrl: "...url",
+//   photoId: 100,
+//   photoType: "big",
+// };
+
+// articleCommentList = {
+//   list: [{ id: 8282, user: "Ivan", message: "Крутий контент" }],
+// };
+
+// Object.assign(article, articlePhoto, articleCommentList);
+
+// // console.log(article);
+
+// console.log(Object.entries(article));
+
+//===========
+
+// const article = {
+//   info: {
+//     title: "My article",
+//     description: "This is info about article",
+//   },
+//   id: 10542,
+//   categoryId: 1234,
+//   likeAmount: 421,
+// };
+
+// const ARTICLE_FIELD = {
+//   title: "ID статті",
+//   description: "Заголовок статті",
+// };
+
+// articlePhoto = {
+//   photoUrl: "...url",
+//   photoId: 100,
+//   photoType: "big",
+// };
+
+// articleCommentList = {
+//   list: [{ id: 8282, user: "Ivan", message: "Крутий контент" }],
+// };
+
+// // Object.assign(article, articlePhoto, articleCommentList);
+
+// // console.log(article);
+
+// // console.log(Object.entries(article.info));
+
+// const formList = Object.entries(article.info);
+
+// const formListLayout = formList.map(([key, value]) => {
+//   // return `${ARTICLE_FIELD[key]} : ${value}`;
+//   // return [ARTICLE_FIELD[key], value];
+//   return `<p><strong>${ARTICLE_FIELD[key]} </strong> <br> <span> ${value} </span> </p>`;
+// });
+
+// // console.log(formListLayout);
+
+// const objArr = [
+//   ["id", 335432],
+//   ["title", "My product name"],
+//   ["price", 89],
+// ];
+
+// // console.log(Object.fromEntries(objArr));
+
+// // console.log(article.hasOwnProperty("id"));
+// // console.log(article.hasOwnProperty("523434"));
+
+// // console.log(article.propertyIsEnumerable("hasOwnProperty"));
+// // console.log(article.propertyIsEnumerable("id"));
+// // console.log(article.propertyIsEnumerable("tewerewr"));
+
+// //=====
+
+// // Object.freeze(article);
+
+// // article.title = "Hello";
+// // article.id = "Hello";
+
+// // delete article.info;
+
+// // // console.log(article.hasOwnProperty("title"));
+
+// // // console.log(article);
+
+// // console.log(Object.isFrozen(article));
+
+// // ///=========================================
+
+// // console.log(article);
+
+// // // Object.preventExtensions(article);
+
+// // article.title = "Hello";
+// // article.id = "Hello";
+
+// // delete article.info;
+
+// // console.log(article);
+
+// // console.log(Object.isExtensible(article));
+
+// //=========================================
+
+// // console.log(article);
+
+// // Object.seal(article);
+
+// // article.title = "Hello";
+// // article.id = "Hello";
+
+// // delete article.info;
+
+// // console.log(article.info);
+
+// // console.log(article);
+
+// // console.log(Object.isExtensible(article));
+
+// // console.log(Object.isSealed(article));
+
+// //===
+
+// console.log(Object.keys(article));
+// console.log(Object.values(article));
+// console.log(Object.values(article.info));
+
+//================Lesson 20===============Set===data type==============
+// const set = new Set(["123", "123", "123"]);
+
+// const set = new Set(["123", "123", "123", 123, null]);
+// console.log(set);
+
+//======
+
+// const userIdList = new Set([4123, 5432, 6434, 75343]);
+
+// console.log(userIdList);
+
+// for (const value of userIdList) {
+//   console.log(value);
+// }
+
+// userIdList.forEach((value, value2, set) => console.log(value));
+
+// console.log(userIdList.size);
+
+//====
+
+// userIdList.add(4123);
+
+// console.log(userIdList);
+// console.log(userIdList.size);
+
+// userIdList.add(4125);
+
+// console.log(userIdList);
+// console.log(userIdList.size);
+
+// //=========================
+
+// const result = userIdList.delete(4125);
+// // console.log(result);
+
+// console.log(userIdList);
+// console.log(userIdList.size);
+
+// //=====
+
+// console.log(userIdList.has(4123));
+// console.log(userIdList.has(4125131));
+// console.log(userIdList.has("4123"));
+
+// //===
+
+// userIdList.clear();
+// console.log(userIdList);
+
+// //================
+
+// const key = userIdList.keys();
+
+// console.log(key);
+
+// //================
+
+// const value = userIdList.values();
+
+// console.log(value);
+
+//================
+
+// const entry = userIdList.entries();
+
+// console.log(entry);
+
+// const obj = Object.fromEntries(entry);
+
+// console.log(obj);
+
+//=============
+
+// const valueList = userIdList.values();
+
+// const arr = Array.from(valueList);
+
+// console.log(arr);
+
+///======================
+
+// const arr = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+// const set = new Set(arr);
+
+// const arr2 = [...set];
+
+// console.log(arr2);
+
+//=================================
+
+// const arr = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+// const set = new Set(arr);
+
+// // const arr2 = Array.from(set.values());
+// // const arr2 = Array.from(set);
+// const arr2 = [...set];
+
+// console.log(arr2);
+
+//======================
+
+// const categoryList = new Set();
+
+// function addCategory(category) {
+//   if (categoryList.has(category)) {
+//     console.log("Ця категорія вже є");
+
+//     return false;
+//   }
+
+//   categoryList.add(category);
+//   return true;
+// }
+
+// console.log(addCategory("Спорт"));
+// console.log(addCategory("Спорт"));
+// console.log(addCategory("Їжа"));
+
+//==========================================
+
+const students = [
+  { id: 1, name: "John", course: "Math" },
+  { id: 2, name: "Jane", course: "Science" },
+  { id: 3, name: "Adam", course: "Math" },
+  { id: 4, name: "Eve", course: "English" },
+  { id: 5, name: "Kate", course: "Science" },
 ];
 
-const result = flatArray.flatMap((el) => {
-  return el.map((it) => {
-    return it[0] - it[1];
-  });
+// const course = students.map((student) => student.course);
 
-  console.log(newArr);
-});
+// console.log(course);
+// const courseList = new Set(course);
 
-console.log(result);
+// console.log(courseList);
 
-result.forEach((elem, index, array) => {
-  console.log(elem);
-});
+//==
+const courseList = new Set(students.map((student) => student.course));
+
+console.log(courseList);
+
+console.log(Array.from(courseList));
