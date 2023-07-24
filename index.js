@@ -3880,11 +3880,11 @@ console.log('Test')  */
 
 //==========================================
 
-const userList = [
-  { id: 6412, name: "Anton", age: 41, balance: 300 },
-  { id: 1, name: "Diana", age: 19, balance: 0 },
-  { id: 54, name: "Ivan", age: 34, balance: 10700 },
-];
+// const userList = [
+//   { id: 6412, name: "Anton", age: 41, balance: 300 },
+//   { id: 1, name: "Diana", age: 19, balance: 0 },
+//   { id: 54, name: "Ivan", age: 34, balance: 10700 },
+// ];
 
 // userList.map((user, index, array) => {
 //   return user;
@@ -4378,13 +4378,13 @@ const userList = [
 
 //==========================================
 
-const students = [
-  { id: 1, name: "John", course: "Math" },
-  { id: 2, name: "Jane", course: "Science" },
-  { id: 3, name: "Adam", course: "Math" },
-  { id: 4, name: "Eve", course: "English" },
-  { id: 5, name: "Kate", course: "Science" },
-];
+// const students = [
+//   { id: 1, name: "John", course: "Math" },
+//   { id: 2, name: "Jane", course: "Science" },
+//   { id: 3, name: "Adam", course: "Math" },
+//   { id: 4, name: "Eve", course: "English" },
+//   { id: 5, name: "Kate", course: "Science" },
+// ];
 
 // const course = students.map((student) => student.course);
 
@@ -4394,8 +4394,259 @@ const students = [
 // console.log(courseList);
 
 //==
-const courseList = new Set(students.map((student) => student.course));
+// const courseList = new Set(students.map((student) => student.course));
 
-console.log(courseList);
+// console.log(courseList);
 
-console.log(Array.from(courseList));
+// console.log(Array.from(courseList));
+
+//============Lesson 21=====Dictionary==advanced data type============================================
+
+// const dictionary = new Map();
+
+// const button = new Map([
+//   ["color", "red"],
+//   ["size", "32px"],
+// ]);
+
+// console.log(button);
+
+// const obj = {
+//   color: "red",
+//   size: 32 + "px",
+// };
+
+// const button2 = new Map(obj);
+
+// console.log(button2);
+
+// const button2 = new Map(Object.entries(obj));
+
+// console.log(button2);
+
+//=====
+
+// const set = new Set(["red", "32px"]);
+// const button3 = new Map(set.entries());
+// console.log(button3);
+
+// const button32 = new Map(Object.entries(Object.fromEntries(set.entries())));
+// console.log(button32);
+
+// console.log(button3.entries());
+
+//=====
+
+// const button = new Map([
+//   ["color", "red"],
+//   ["size", "32px"],
+// ]);
+
+// // const set2 = new Set(button);
+
+// // const set2 = new Set(button.values());
+
+// const set2 = new Set(button.keys());
+// console.log(set2);
+
+///==================================
+
+// const button = new Map([
+//   ["color", "red"],
+//   ["size", "32px"],
+// ]);
+
+// for (const [key, value] of button) {
+//   console.log(key, value);
+// }
+
+// for (const value of button) {
+//   console.log(value);
+// }
+
+// for (const value in button) {
+//   console.log(value);
+// }
+
+// for (const value in Object.fromEntries(button.entries())) {
+//   console.log(value);
+// }
+
+// ///===============
+
+// const button = new Map([
+//   ["color", "red"],
+//   ["size", "32px"],
+// ]);
+
+// button.forEach((value, key, map) => console.log(value, key, map));
+
+///===============
+
+// const button = new Map([
+//   ["color", "red"],
+//   ["size", "32px"],
+// ]);
+
+// console.log(button.size);
+
+// const button = new Map([
+//   ["color", "red", "38"],
+//   ["size", "32px"],
+// ]);
+
+// console.log(button.size);
+// console.log(button);
+
+// //==
+
+// const button = new Map([["color", "red", "38"], ["size", "32px"], 123, 123]);
+
+// console.log(button.size);
+// console.log(button);
+
+//==
+
+// const button = new Map([
+//   ["color", "red", "38"],
+//   ["size", "32px"],
+//   [11111],
+//   [123, 123],
+// ]);
+
+// console.log(button.size);
+// console.log(button);
+
+//=====
+
+// const button = new Map([
+//   ["color", "red", "38"],
+//   ["size", "32px"],
+// ]);
+
+// console.log(button.size);
+// console.log(button[0]);
+// console.log(button["color"]);
+
+// button.color = true;
+// console.log(button["color"]);
+
+// button.color = 1000;
+// console.log(button["color"]);
+// console.log(button);
+
+// button.set("color", "blue");
+// console.log(button);
+
+// button.set("color", 1000);
+// button.set("weight", 600);
+// console.log(button);
+
+// console.log(button.get("weight"));
+
+// console.log(button.delete("weight"));
+// console.log(button.delete("weight"));
+// console.log(button);
+
+// console.log(button.has("weight"));
+// console.log(button.has("color"));
+
+// button.clear();
+// console.log(button);
+
+//==============================
+
+// const LANG_LIST = {
+//   UA: "uk-UA",
+//   EU: "eu-US",
+// };
+
+// // const activeLang = LANG_LIST.EU;
+// const activeLang = LANG_LIST.UA;
+
+// const product = {
+//   price: 100,
+//   amount: 5,
+//   info: new Map([
+//     [
+//       LANG_LIST.UA,
+//       {
+//         title: "Заголовок",
+//         info: "Інформацшя",
+//       },
+//     ],
+//     [
+//       LANG_LIST.EU,
+//       {
+//         title: "Title",
+//         info: "Info",
+//       },
+//     ],
+//   ]),
+// };
+
+// // console.log(product);
+
+// const info = product.info.get(activeLang);
+// console.log(info);
+
+// console.log(product.info.has(activeLang));
+
+//=====================================================
+
+const user1 = {
+  id: 1323,
+  name: "Ivan",
+};
+
+const user2 = {
+  id: 3453,
+  name: "Anton",
+};
+
+const product1 = {
+  id: 51263,
+  title: "Mobile Phone",
+};
+
+const product2 = {
+  id: 1763,
+  title: "Apple",
+};
+
+const userProduct = new Map();
+
+// userProduct.set(user1, product1);
+// userProduct.set(user2, product2);
+
+// console.log(userProduct.set(user1, product1).set(user2, product2));
+userProduct.set(user1, product1).set(user2, product2);
+
+// console.log(userProduct);
+
+// console.log(userProduct.has(user1));
+// console.log(userProduct.get(user1));
+
+// const productClientList = new Map();
+
+// productClientList.set(product1, new Set());
+
+// console.log(productClientList);
+
+const productClientList = new Map([[product1, new Set()]]);
+
+// console.log(
+//   productClientList.set(product1, productClientList.get(product1).add(user1))
+// );
+
+productClientList.set(product1, productClientList.get(product1).add(user1));
+
+console.log(productClientList);
+
+productClientList.set(product1, productClientList.get(product1).add(user2));
+
+console.log(productClientList);
+
+const has = productClientList.get(product1).has(user1);
+
+console.log(has);
