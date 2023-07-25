@@ -4594,59 +4594,461 @@ console.log('Test')  */
 
 //=====================================================
 
-const user1 = {
-  id: 1323,
-  name: "Ivan",
-};
+// const user1 = {
+//   id: 1323,
+//   name: "Ivan",
+// };
 
-const user2 = {
-  id: 3453,
-  name: "Anton",
-};
+// const user2 = {
+//   id: 3453,
+//   name: "Anton",
+// };
 
-const product1 = {
-  id: 51263,
-  title: "Mobile Phone",
-};
+// const product1 = {
+//   id: 51263,
+//   title: "Mobile Phone",
+// };
 
-const product2 = {
-  id: 1763,
-  title: "Apple",
-};
+// const product2 = {
+//   id: 1763,
+//   title: "Apple",
+// };
 
-const userProduct = new Map();
+// const userProduct = new Map();
 
-// userProduct.set(user1, product1);
-// userProduct.set(user2, product2);
+// // userProduct.set(user1, product1);
+// // userProduct.set(user2, product2);
 
-// console.log(userProduct.set(user1, product1).set(user2, product2));
-userProduct.set(user1, product1).set(user2, product2);
+// // console.log(userProduct.set(user1, product1).set(user2, product2));
+// userProduct.set(user1, product1).set(user2, product2);
 
-// console.log(userProduct);
+// // console.log(userProduct);
 
-// console.log(userProduct.has(user1));
-// console.log(userProduct.get(user1));
+// // console.log(userProduct.has(user1));
+// // console.log(userProduct.get(user1));
 
-// const productClientList = new Map();
+// // const productClientList = new Map();
 
-// productClientList.set(product1, new Set());
+// // productClientList.set(product1, new Set());
+
+// // console.log(productClientList);
+
+// const productClientList = new Map([[product1, new Set()]]);
+
+// // console.log(
+// //   productClientList.set(product1, productClientList.get(product1).add(user1))
+// // );
+
+// productClientList.set(product1, productClientList.get(product1).add(user1));
 
 // console.log(productClientList);
 
-const productClientList = new Map([[product1, new Set()]]);
+// productClientList.set(product1, productClientList.get(product1).add(user2));
 
-// console.log(
-//   productClientList.set(product1, productClientList.get(product1).add(user1))
+// console.log(productClientList);
+
+// const has = productClientList.get(product1).has(user1);
+
+// console.log(has);
+
+//===========Lesson 22==========JSON and URL==============================
+
+// const data = {
+//   id: 1043,
+//   login: "user4323",
+//   password: "12345@#sd",
+//   role: "Admin",
+//   go() {
+//     console.log("Go");
+//   },
+// };
+
+// console.log(data.toString());
+
+// const jsonData = JSON.stringify(data);
+// console.log(jsonData);
+
+// const jsonData = JSON.stringify(data, (key, value) => {
+//   console.log(key, value);
+//   return "123";
+// });
+// console.log(jsonData);
+
+// const jsonData = JSON.stringify(data, (key, value) => {
+//   console.log(key);
+//   return "123";
+// });
+// console.log(jsonData);
+
+// const jsonData = JSON.stringify(data, (key, value) => {
+//   console.log(value);
+//   return "123";
+// });
+// console.log(jsonData);
+
+// //=====
+
+// const data = {
+//   id: 1043,
+//   login: "user4323",
+//   password: "12345@#sd",
+//   role: "Admin",
+//   go() {
+//     console.log("Go");
+//   },
+//   test1: {
+//     test2: 123,
+//   },
+// };
+
+// const jsonData = JSON.stringify(data, (key, value) => {
+//   console.log(value);
+//   return value;
+// });
+// console.log(jsonData);
+
+// //=====
+
+// const data = {
+//   id: 1043,
+//   login: "user4323",
+//   password: "12345@#sd",
+//   role: "Admin",
+//   go() {
+//     console.log("Go");
+//   },
+//   test1: {
+//     test2: 123,
+//   },
+// };
+
+// const jsonData = JSON.stringify(data, (key, value) => {
+//   if (typeof value === "string") {
+//     return value.toUpperCase();
+//   }
+
+//   if (typeof value === "number") {
+//     return value * 10;
+//   }
+
+//   console.log(value);
+//   return value;
+// });
+// console.log(jsonData);
+
+// //=====
+
+// const roleField = "roleName";
+
+// const data = {
+//   id: 1043,
+//   login: "user4323",
+//   password: "12345@#sd",
+//   [roleField]: "Admin",
+//   go() {
+//     console.log("Go");
+//   },
+//   test1: {
+//     test2: 123,
+//   },
+// };
+
+// const jsonData = JSON.stringify(data, (key, value) => {
+//   if (key === roleField) {
+//     return null;
+//   }
+
+//   if (typeof value === "string") {
+//     return value.toUpperCase();
+//   }
+
+//   if (typeof value === "number") {
+//     return value * 10;
+//   }
+
+//   console.log(value);
+//   // return value;
+//   // return 123;
+//   // return "123";
+
+//   return value;
+// });
+
+// console.log(jsonData);
+
+// //=====
+
+// const roleField = "roleName";
+
+// const data = {
+//   id: 1043,
+//   login: "user4323",
+//   password: "12345@#sd",
+//   [roleField]: "Admin",
+//   go() {
+//     console.log("Go");
+//   },
+//   test1: {
+//     test2: 123,
+//   },
+// };
+
+// const jsonData = JSON.stringify(
+//   data,
+//   (key, value) => {
+//     if (key === roleField) {
+//       return null;
+//     }
+
+//     if (typeof value === "string") {
+//       return value.toUpperCase();
+//     }
+
+//     if (typeof value === "number") {
+//       return value * 10;
+//     }
+
+//     console.log(value);
+//     // return value;
+//     // return 123;
+//     // return "123";
+
+//     return value;
+//   },
+//   // 1
+//   // 4
+//   8
 // );
 
-productClientList.set(product1, productClientList.get(product1).add(user1));
+// console.log(jsonData);
 
-console.log(productClientList);
+//=====
 
-productClientList.set(product1, productClientList.get(product1).add(user2));
+// const roleField = "roleName";
 
-console.log(productClientList);
+// const data = {
+//   id: 1043,
+//   login: "user4323",
+//   password: "12345@#sd",
+//   [roleField]: "Admin",
+//   go() {
+//     console.log("Go");
+//   },
+//   test1: {
+//     test2: 123,
+//   },
+// };
 
-const has = productClientList.get(product1).has(user1);
+// const jsonData = JSON.stringify(
+//   data,
+//   (key, value) => {
+//     if (key === roleField) {
+//       return null;
+//     }
 
-console.log(has);
+//     if (typeof value === "string") {
+//       return value.toUpperCase();
+//     }
+
+//     if (typeof value === "number") {
+//       return value * 10;
+//     }
+
+//     console.log(value);
+//     // return value;
+//     // return 123;
+//     // return "123";
+
+//     return value;
+//   },
+//   // 1
+//   // 4
+//   8
+// );
+
+// console.log(jsonData);
+
+// const parseData = JSON.parse(jsonData, (key, value) => {
+//   if (key === roleField) {
+//     return "Admin";
+//   }
+
+//   if (typeof value === "string") {
+//     return value.toLowerCase();
+//   }
+
+//   if (typeof value === "number") {
+//     return value / 10;
+//   }
+
+//   return value;
+// });
+
+// console.log(parseData);
+
+//==============================
+
+// const url = new URL("/path", "http://www.example.com");
+
+// console.log(url);
+
+//============================
+
+// const url = new URL("http://www.example.com/path");
+
+// console.log(url);
+// console.log(url.href);
+// console.log(url.protocol);
+
+//====
+
+// const url = new URL("mailto:user@gmail.com");
+
+// console.log(url.protocol);
+// console.log(url);
+
+//=======================
+
+// const url = new URL("https://www.example.com/path");
+
+// console.log(url);
+// console.log(url.href);
+// console.log(url.protocol);
+
+// //==================
+
+// const url = new URL(
+//   "https://www.example.com/catalog/category-1/product-name/info"
+// );
+
+// console.log(url.pathname);
+// console.log(url.origin);
+
+// //==================
+
+// const url = new URL(
+//   "https://www.example.com/catalog/category-1/product-name/info"
+// ).origin;
+
+// console.log(url);
+
+// //==================
+
+// const url = new URL(
+//   "https://www.example.com/catalog/category-1/product-name/info"
+// ).host;
+
+// console.log(url);
+
+//==================
+
+// const url = new URL(
+//   "https://www.example.com:4000/catalog/category-1/product-name/info"
+// ).host;
+
+// console.log(url);
+
+// const url = new URL(
+//   "https://www.example.com:4000/catalog/category-1/product-name/info"
+// ).hostname;
+
+// console.log(url);
+
+// //============================
+
+// const url = new URL(
+//   "https://www.example.com:4000/catalog/category-1/product-name/info#how-to-do"
+// ).hash;
+
+// console.log(url);
+// console.log(url.slice(1));
+
+//============================
+
+// const url = new URL(
+//   "https://admin:4565-456@www.example.com:4000/catalog/category-1/product-name/info#how-to-do"
+// ).password;
+
+// console.log(url);
+
+//============================
+
+// const url = new URL(
+//   "https://admin:4565-456@www.example.com:4000/catalog/category-1/product-name/info#how-to-do"
+// ).port;
+
+// console.log(url);
+
+// const url = new URL(
+//   "https://admin:4565-456@www.example.com/catalog/category-1/product-name/info#how-to-do"
+// ).port;
+
+// console.log(url);
+
+// //====================
+
+// const url = new URL(
+//   "https://admin:4565-456@www.example.com/catalog/category-1/product-name/info#how-to-do"
+// ).username;
+
+// console.log(url);
+
+//====================
+
+// const url = new URL(
+//   "https://www.google.com/search?q=victory&sxsrf=AB5stBiOVEicSjtkWwxjTSpkrbMWHwWQkw%3A1690276084325&source=hp&ei=9JC_ZI6NEYr_7_UPsLeywAU&iflsig=AD69kcEAAAAAZL-fBL9vIbdFW-gT5F1bCJGWGBCoa5bW&ved=0ahUKEwiO182MwamAAxWK_7sIHbCbDFgQ4dUDCAk&uact=5&oq=victory&gs_lp=Egdnd3Mtd2l6Igd2aWN0b3J5MgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAuGIAEMg0QLhiABBjHARjRAxgKMgUQABiABDIFEC4YgAQyBRAAGIAESJ8VUM4GWMEPcAF4AJABAJgBdaAB8AWqAQMxLja4AQPIAQD4AQGoAgrCAgcQIxjqAhgnwgIEECMYJ8ICBxAjGIoFGCfCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgILEAAYigUYsQMYgwHCAg4QLhiABBixAxjHARjRA8ICERAuGIAEGLEDGIMBGMcBGNEDwgIMECMYigUYExiABBgnwgILEC4YgAQYxwEY0QPCAgQQABgDwgIIEC4YgAQYsQM&sclient=gws-wiz"
+// ).search;
+
+// console.log(url);
+
+// const url = new URL(
+//   "https://www.google.com/search?q=victory&sxsrf=AB5stBiOVEicSjtkWwxjTSpkrbMWHwWQkw%3A1690276084325&source=hp&ei=9JC_ZI6NEYr_7_UPsLeywAU&iflsig=AD69kcEAAAAAZL-fBL9vIbdFW-gT5F1bCJGWGBCoa5bW&ved=0ahUKEwiO182MwamAAxWK_7sIHbCbDFgQ4dUDCAk&uact=5&oq=victory&gs_lp=Egdnd3Mtd2l6Igd2aWN0b3J5MgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAuGIAEMg0QLhiABBjHARjRAxgKMgUQABiABDIFEC4YgAQyBRAAGIAESJ8VUM4GWMEPcAF4AJABAJgBdaAB8AWqAQMxLja4AQPIAQD4AQGoAgrCAgcQIxjqAhgnwgIEECMYJ8ICBxAjGIoFGCfCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgILEAAYigUYsQMYgwHCAg4QLhiABBixAxjHARjRA8ICERAuGIAEGLEDGIMBGMcBGNEDwgIMECMYigUYExiABBgnwgILEC4YgAQYxwEY0QPCAgQQABgDwgIIEC4YgAQYsQM&sclient=gws-wiz"
+// ).searchParams;
+
+// console.log(url);
+
+// console.log(url.has("q"));
+
+// console.log(url.append("name", "google"));
+
+// console.log(url);
+
+// console.log(url.get("name"));
+
+// //=============
+
+// const url = new URL(
+//   "https://www.google.com/search?q=victory&q=HelloWorld&source=hp&ei=9JC_ZI6NEYr_7_UPsLeywAU&iflsig=AD69kcEAAAAAZL-fBL9vIbdFW-gT5F1bCJGWGBCoa5bW&ved=0ahUKEwiO182MwamAAxWK_7sIHbCbDFgQ4dUDCAk&uact=5&oq=victory&gs_lp=Egdnd3Mtd2l6Igd2aWN0b3J5MgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAuGIAEMg0QLhiABBjHARjRAxgKMgUQABiABDIFEC4YgAQyBRAAGIAESJ8VUM4GWMEPcAF4AJABAJgBdaAB8AWqAQMxLja4AQPIAQD4AQGoAgrCAgcQIxjqAhgnwgIEECMYJ8ICBxAjGIoFGCfCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgILEAAYigUYsQMYgwHCAg4QLhiABBixAxjHARjRA8ICERAuGIAEGLEDGIMBGMcBGNEDwgIMECMYigUYExiABBgnwgILEC4YgAQYxwEY0QPCAgQQABgDwgIIEC4YgAQYsQM&sclient=gws-wiz"
+// ).searchParams;
+
+// console.log(url);
+// console.log(url.getAll("q"));
+
+// url.sort();
+
+// console.log(url);
+
+//=============
+
+// const mainUrl = new URL(
+//   "https://www.google.com/search?q=victory&q=HelloWorld&source=hp&ei=9JC_ZI6NEYr_7_UPsLeywAU&iflsig=AD69kcEAAAAAZL-fBL9vIbdFW-gT5F1bCJGWGBCoa5bW&ved=0ahUKEwiO182MwamAAxWK_7sIHbCbDFgQ4dUDCAk&uact=5&oq=victory&gs_lp=Egdnd3Mtd2l6Igd2aWN0b3J5MgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAuGIAEMg0QLhiABBjHARjRAxgKMgUQABiABDIFEC4YgAQyBRAAGIAESJ8VUM4GWMEPcAF4AJABAJgBdaAB8AWqAQMxLja4AQPIAQD4AQGoAgrCAgcQIxjqAhgnwgIEECMYJ8ICBxAjGIoFGCfCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgILEAAYigUYsQMYgwHCAg4QLhiABBixAxjHARjRA8ICERAuGIAEGLEDGIMBGMcBGNEDwgIMECMYigUYExiABBgnwgILEC4YgAQYxwEY0QPCAgQQABgDwgIIEC4YgAQYsQM&sclient=gws-wiz"
+// );
+
+// const url = mainUrl.searchParams;
+
+// console.log(url);
+// console.log(url.getAll("q"));
+
+// url.sort();
+
+// console.log(url);
+
+// console.log(mainUrl);
+
+//=============
+
+const url = new URL("https://www.google.com/search");
+
+url.searchParams.append("q", "cat photo");
+
+console.log(url.href);
