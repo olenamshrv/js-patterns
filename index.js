@@ -5047,8 +5047,517 @@ console.log('Test')  */
 
 //=============
 
-const url = new URL("https://www.google.com/search");
+// const url = new URL("https://www.google.com/search");
 
-url.searchParams.append("q", "cat photo");
+// url.searchParams.append("q", "cat photo");
 
-console.log(url.href);
+// console.log(url.href);
+
+///======Lesson 23=================Date===================================
+
+// const date = new Date();
+
+// // console.log(date); // console.log(date.toISOString());
+
+// const dateString = date.toISOString();
+// console.log(dateString);
+
+// // console.log(new Date(dateString));
+
+// const date2 = Date.parse(dateString);
+
+// console.log(date2);
+
+//===============================
+
+// const date = new Date();
+
+// console.log(date); // console.log(date.toISOString());
+
+// const dateString = date.toISOString();
+// console.log(dateString);
+
+// console.log(new Date(dateString));
+
+// const date2 = Date.parse(dateString) + 5000;
+
+// const date2 = Date.parse(dateString) + 1000 * 60 * 5;
+
+// console.log(date2);
+
+//=============
+
+// const date = new Date();
+// const dateString = date.toISOString();
+
+// console.log(date.toString());
+// console.log(date);
+// console.log(date.toUTCString());
+// console.log(date.toISOString());
+// console.log(date.toDateString());
+// console.log(date.toTimeString());
+
+// const zone = date.getTimezoneOffset();
+// console.log(zone);
+
+// const zone = date.getTimezoneOffset() / -60;
+// console.log(zone);
+
+// const user = -3;
+
+// function getUserTimezone(timezone) {
+//   //   const date = new Date();
+
+//   const date = Date.now();
+//   const myTimezone = new Date().getTimezoneOffset() / -60;
+//   console.log(myTimezone);
+
+//   //   return date.toString();  //1690366321733
+//   return date; // 1690366240743
+// }
+
+// console.log(getUserTimezone(user));
+
+// console.log(new Date().toString(1690366321733));
+// console.log(new Date().toString(1690366240743));
+
+// //=====================
+
+// const zone = date.getTimezoneOffset() / -60;
+// console.log(zone);
+
+// const user = -3;
+
+// function getUserTimezone(timezone) {
+//   //   const date = new Date();
+
+//   let date = Date.now();
+//   const myTimezone = new Date().getTimezoneOffset() / -60;
+//   console.log(myTimezone);
+
+//   date -= 1000 * 60 * 60 * myTimezone;
+//   return date; // 1690366240743
+// }
+
+// console.log(new Date(getUserTimezone(user)).toString());
+// console.log(new Date().toUTCString());
+
+//=====================
+
+// const user = -3;
+
+// function getUserTimezone(timezone) {
+//   let date = Date.now();
+//   const myTimezone = new Date().getTimezoneOffset() / -60;
+
+//   date -= 1000 * 60 * 60 * -myTimezone;
+
+//   date += 1000 * 60 * 60 * timezone;
+
+//   return date;
+// }
+
+// console.log(new Date(getUserTimezone(user)).toString());
+// console.log(new Date().toUTCString());
+
+// //=====================
+
+// const user = -3;
+
+// function getUserTimezone(timezone) {
+//   //   let date = Date.now();
+//   //   console.log(date);
+
+//   //   let date = new Date(2023, 5, 26, 12, 30, 0, 0);
+//   //   let date = Date.UTC(2023, 5, 26, 12, 30, 0, 0);
+//   let date = new Date(Date.UTC(2023, 5, 26, 12, 30, 0, 0));
+//   console.log(date);
+//   console.log(date.toString());
+//   console.log(date.toUTCString());
+
+//   console.log(date.getTime());
+
+//   //   const myTimezone = new Date().getTimezoneOffset() / -60;
+//   //   date -= 1000 * 60 * 60 * -myTimezone;
+//   //   date += 1000 * 60 * 60 * timezone;
+//   //   return date;
+// }
+
+// getUserTimezone(user);
+// console.log(new Date(1687782600000).toString());
+// console.log(new Date(1687782600000).toUTCString());
+
+// //=====================
+
+// const user = -3;
+
+// function getUserTimezone(timezone) {
+//   let date = new Date(Date.UTC(2023, 5, 26, 12, 30, 0, 0));
+
+//   console.log(date.toString());
+//   console.log(date.toUTCString());
+
+//   //   console.log(date);
+//   //   console.log(date.toString());
+//   //   console.log(date.toUTCString());
+
+//   //   console.log(date.getTime());
+
+//   const myTimezone = new Date().getTimezoneOffset() / -60;
+//   date.setTime(date.getTime() - 1000 * 60 * 60 * myTimezone);
+//   date.setTime(date.getTime() + 1000 * 60 * 60 * timezone);
+
+//   return date;
+
+//   //   date -= 1000 * 60 * 60 * myTimezone;
+// }
+
+// // getUserTimezone(user);
+// // console.log(new Date(1687782600000).toString());
+// // console.log(new Date(1687782600000).toUTCString());
+
+// const userDate = getUserTimezone(user);
+
+// console.log(userDate.toString());
+// console.log(userDate.toUTCString());
+
+// //=====================
+
+// const user = -3;
+
+// function getUserTimezone(timezone) {
+//   let date = new Date(Date.UTC(2023, 5, 26, 12, 30, 0, 0));
+
+//   //   console.log(date.toString());
+//   console.log(date.toUTCString());
+
+//   //   console.log(date);
+//   //   console.log(date.toString());
+//   //   console.log(date.toUTCString());
+
+//   //   console.log(date.getTime());
+
+//   const myTimezone = new Date().getTimezoneOffset() / -60;
+//   date.setTime(date.getTime() - 1000 * 60 * 60 * myTimezone);
+//   date.setTime(date.getTime() + 1000 * 60 * 60 * timezone);
+
+//   return date;
+
+//   //   date -= 1000 * 60 * 60 * myTimezone;
+// }
+
+// // getUserTimezone(user);
+// // console.log(new Date(1687782600000).toString());
+// // console.log(new Date(1687782600000).toUTCString());
+
+// const userDate = getUserTimezone(user);
+
+// // console.log(userDate.toString());
+// console.log(userDate.toUTCString());
+
+// //=====================
+
+// const user = -3;
+
+// function getUserTimezone(timezone) {
+//   let date = new Date(Date.UTC(2023, 5, 26, 12, 30, 0, 0));
+
+//   console.log(date.toString());
+//   //   console.log(date.toUTCString());
+
+//   //   console.log(date);
+//   //   console.log(date.toString());
+//   //   console.log(date.toUTCString());
+
+//   //   console.log(date.getTime());
+
+//   const myTimezone = new Date().getTimezoneOffset() / -60;
+//   date.setTime(date.getTime() - 1000 * 60 * 60 * myTimezone);
+//   date.setTime(date.getTime() + 1000 * 60 * 60 * timezone);
+
+//   return date;
+
+//   //   date -= 1000 * 60 * 60 * myTimezone;
+// }
+
+// // getUserTimezone(user);
+// // console.log(new Date(1687782600000).toString());
+// // console.log(new Date(1687782600000).toUTCString());
+
+// const userDate = getUserTimezone(user);
+
+// console.log(userDate.toString());
+// // console.log(userDate.toUTCString());
+
+//=====================
+
+// const user = -3;
+
+// function getUserTimezone(timezone) {
+//   let date = new Date(Date.UTC(2023, 5, 26, 12, 30, 0, 0));
+
+//   console.log(date.toString());
+
+//   //   console.log(date.toUTCString());
+
+//   //   console.log(date);
+//   //   console.log(date.toString());
+//   //   console.log(date.toUTCString());
+
+//   //   console.log(date.getTime());
+
+//   const myTimezone = new Date().getTimezoneOffset() / -60;
+//   date.setTime(date.getTime() - 1000 * 60 * 60 * myTimezone);
+//   date.setTime(date.getTime() + 1000 * 60 * 60 * timezone);
+
+//   return date;
+
+//   //   date -= 1000 * 60 * 60 * myTimezone;
+// }
+
+// // getUserTimezone(user);
+// // console.log(new Date(1687782600000).toString());
+// // console.log(new Date(1687782600000).toUTCString());
+
+// const userDate = getUserTimezone(user);
+
+// console.log(userDate.toString());
+// // console.log(userDate.toUTCString());
+
+// //==================================
+
+// const user = -3;
+
+// function getUserTimezone(timezone) {
+//   let date = new Date(Date.UTC(2023, 5, 26, 12, 30, 0, 0));
+
+//   console.log(date.getHours());
+//   console.log(date.getUTCHours());
+
+//   date.setHours(date.getUTCHours() + timezone);
+
+//   //   console.log(date.toUTCString());
+
+//   //   console.log(date);
+//   //   console.log(date.toString());
+//   //   console.log(date.toUTCString());
+
+//   //   console.log(date.getTime());
+
+//   //   const myTimezone = new Date().getTimezoneOffset() / -60;
+//   //   date.setTime(date.getTime() - 1000 * 60 * 60 * myTimezone);
+//   //   date.setTime(date.getTime() + 1000 * 60 * 60 * timezone);
+
+//   return date;
+
+//   //   date -= 1000 * 60 * 60 * myTimezone;
+// }
+
+// // getUserTimezone(user);
+// // console.log(new Date(1687782600000).toString());
+// // console.log(new Date(1687782600000).toUTCString());
+
+// const userDate = getUserTimezone(user);
+
+// // console.log(userDate.toString());
+// // console.log(userDate.toUTCString());
+
+// console.log(userDate.getHours());
+// console.log(userDate.getUTCHours());
+
+// console.log(userDate.toString());
+
+// console.log(userDate.toTimeString());
+
+// //==================================
+
+// const user = -3;
+
+// const date = new Date();
+// const dateString = date.toISOString();
+// console.log(date.getFullYear());
+
+// date.setFullYear(2020);
+
+// console.log(date.getFullYear());
+
+// console.log(date);
+
+//==================================
+
+// const user = -3;
+
+// const date = new Date();
+// const dateString = date.toISOString();
+
+// console.log("Year", date.getFullYear());
+// date.setFullYear(2020);
+// console.log("Year", date.getFullYear());
+
+// console.log("Month", date.getMonth());
+// date.setMonth(0);
+// console.log("Month", date.getMonth());
+
+// console.log("Date", date.getDate());
+// date.setDate(31);
+// console.log("Date", date.getDate());
+
+// //==================================
+
+// const user = -3;
+
+// const date = new Date();
+// const dateString = date.toISOString();
+
+// console.log("Year", date.getFullYear());
+// date.setFullYear(2020);
+// console.log("Year", date.getFullYear());
+
+// console.log("Month", date.getMonth());
+// date.setMonth(1);
+// console.log("Month", date.getMonth());
+
+// console.log("Date", date.getDate());
+// date.setDate(31);
+// console.log("Date", date.getDate());
+
+// console.log(date.toDateString());
+
+// //==================================
+
+// const user = -3;
+
+// const date = new Date();
+// const dateString = date.toISOString();
+
+// console.log("Year", date.getFullYear());
+// date.setFullYear(2020);
+// console.log("Year", date.getFullYear());
+
+// console.log("Month", date.getMonth());
+// date.setMonth(1);
+// console.log("Month", date.getMonth());
+
+// console.log("Date", date.getDate());
+// date.setDate(27);
+// console.log("Date", date.getDate());
+
+// console.log("Day", date.getDay());
+
+// console.log("Minutes", date.getMinutes());
+// date.setMinutes(45);
+// console.log("Minutes", date.getMinutes());
+
+// console.log("Seconds", date.getSeconds());
+// date.setSeconds(55);
+// console.log("Seconds", date.getSeconds());
+
+// console.log("Milliseconds", date.getMilliseconds());
+// date.setMilliseconds(815);
+// console.log("Milliseconds", date.getMilliseconds());
+
+// console.log(date.toDateString());
+
+//==================================
+
+// const user = -3;
+
+// const date = new Date();
+// const dateString = date.toISOString();
+
+// console.log("Year", date.getFullYear());
+// date.setFullYear(2020);
+// console.log("Year", date.getFullYear());
+
+// console.log("Month", date.getMonth());
+// date.setMonth(1);
+// console.log("Month", date.getMonth());
+
+// console.log("Date", date.getDate());
+// date.setDate(27);
+// console.log("Date", date.getDate());
+
+// console.log("Day", date.getDay());
+
+// console.log("Minutes", date.getMinutes());
+// console.log(date.setMinutes(45));
+// console.log("Minutes", date.getMinutes());
+
+// console.log("Seconds", date.getSeconds());
+// date.setSeconds(55);
+// console.log("Seconds", date.getSeconds());
+
+// console.log("Milliseconds", date.getMilliseconds());
+// date.setMilliseconds(815);
+// console.log("Milliseconds", date.getMilliseconds());
+
+// console.log(date.toDateString());
+
+//========Lesson 24=====Math=====================================
+
+// console.log(Math.PI);
+
+const a = 5;
+const b = 10;
+const c = -5;
+const d = 0;
+const d12 = -0;
+const d1 = "70";
+const d2 = "sd0";
+
+const arr = [20, 30, 40];
+
+// console.log(Math.max(a, b, c, ...arr));
+// console.log(Math.min(a, b, c, ...arr));
+
+// console.log(Math.sign(a));
+// console.log(Math.sign(c));
+// console.log(Math.sign(d));
+// console.log(Math.sign(d12));
+// console.log(Math.sign(d1));
+// console.log(Math.sign(d2));
+
+// console.log(Math.pow(a, 2));
+
+// console.log(Math.sqrt(25));
+// console.log(Math.sqrt(b));
+
+// console.log(Math.floor(3.75), Math.floor(3.5), Math.floor(3.3));
+// console.log(Math.ceil(3.758), Math.ceil(3.516), Math.ceil(3.348));
+// console.log(
+//   Math.round(3.758),
+//   Math.round(3.516),
+//   Math.round(3.499),
+//   Math.round(3.348)
+// );
+// console.log(Math.trunc(3.758), Math.trunc(3.516), Math.trunc(3.348));
+
+// console.log(Math.random());
+// console.log(Math.random());
+// console.log(Math.random());
+
+// const random = Math.random() * 10;
+// console.log(random);
+
+// const random = Math.trunc(Math.random() * 10);
+// console.log(random);
+
+// const random = Math.trunc(Math.random() * 10) + 1;
+// console.log(random);
+
+//====
+
+// console.log(0.1 + 0.2); //  0.30000000000000004
+
+// console.log(0.1 + 0.2 === 0.3);
+// console.log(Math.fround(0.1 + 0.2) === Math.fround(0.3));
+
+// console.log(0.1 + 0.2);
+// console.log(Math.fround(0.1 + 0.2));
+// console.log(Math.fround(0.3));
+// console.log(0.3);
+
+//=====
+
+console.log(Math.floor(0.1 + 0.2) === Math.floor(0.3));
+console.log(Math.round(0.1 + 0.2) === Math.round(0.3));
