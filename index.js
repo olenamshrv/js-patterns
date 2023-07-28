@@ -5497,15 +5497,15 @@ console.log('Test')  */
 
 // console.log(Math.PI);
 
-const a = 5;
-const b = 10;
-const c = -5;
-const d = 0;
-const d12 = -0;
-const d1 = "70";
-const d2 = "sd0";
+// const a = 5;
+// const b = 10;
+// const c = -5;
+// const d = 0;
+// const d12 = -0;
+// const d1 = "70";
+// const d2 = "sd0";
 
-const arr = [20, 30, 40];
+// const arr = [20, 30, 40];
 
 // console.log(Math.max(a, b, c, ...arr));
 // console.log(Math.min(a, b, c, ...arr));
@@ -5559,5 +5559,160 @@ const arr = [20, 30, 40];
 
 //=====
 
-console.log(Math.floor(0.1 + 0.2) === Math.floor(0.3));
-console.log(Math.round(0.1 + 0.2) === Math.round(0.3));
+// console.log(Math.floor(0.1 + 0.2) === Math.floor(0.3));
+// console.log(Math.round(0.1 + 0.2) === Math.round(0.3));
+
+//==============Lesson 25=====Console======================================================
+
+// {
+//   let a = 5;
+
+//   a = 10;
+
+//   console.error(`Error, а змінна має бути 5`);
+// }
+
+//===========================
+
+// console.groupCollapsed("Group 1");
+
+// console.log("Test 1");
+// console.warn("Test 2");
+
+// console.groupCollapsed("Group 2");
+
+// console.debug("Test 3");
+
+// console.groupEnd();
+
+// console.groupEnd();
+
+//==========================
+
+// const counterLabel = "Timer";
+
+// console.time(counterLabel);
+
+// console.groupCollapsed("Group 1");
+
+// console.timeLog(counterLabel);
+
+// console.log("Test 1");
+// console.warn("Test 2");
+
+// console.groupCollapsed("Group 2");
+
+// console.debug("Test 3");
+
+// console.groupEnd();
+
+// console.groupEnd();
+
+// console.timeEnd(counterLabel);
+
+//===============
+
+// const counterLabel = "Timer";
+
+// console.time(counterLabel);
+// console.count(counterLabel);
+
+// console.timeLog(counterLabel);
+// console.count(counterLabel);
+
+// console.timeEnd(counterLabel);
+// console.countReset(counterLabel);
+
+// console.count(counterLabel);
+
+// //===============
+
+// const test1 = () => console.trace("Hello");
+
+// const test2 = () => test1();
+
+// const test3 = () => test2();
+
+// test3();
+
+//===============
+
+// const test1 = () => console.trace("Hello");
+
+// const test2 = () => test15624234();
+
+// const test3 = () => test2();
+
+// test3();
+
+//===========================
+
+// const data = [
+//   { name: "John", age: 25, city: "New York" },
+//   { name: "Alice", age: 30, city: "London" },
+// ];
+
+// console.table(data);
+
+//===
+
+// const data = [1, 2, 3, 4, 5];
+
+// console.table(data);
+
+//==
+
+// const data = [
+//   { name: "John", age: 25, city: "New York" },
+//   { name: "Alice", age: 30, city: "London" },
+// ];
+
+// console.table(data, ["name", "age"]);
+
+// //===================
+
+// const a = 5;
+// const b = 10;
+
+// if (a > b) {
+//   //==
+// } else {
+//   //   console.log("Info");
+//   console.warn("Info");
+// }
+
+//===================
+
+// const a = 5;
+// const b = 10;
+
+// const result = a > b;
+
+// console.assert(result, "Info");
+
+//===
+
+// const a = 5;
+// const b = 10;
+
+// const result = a > b;
+
+// console.assert(!result, "Info");
+// console.assert(result, "Info");
+
+// // if (!result) {
+// //   //...
+// // }
+
+// // if (result) {
+// // } else {
+// //   //..
+// // }
+
+// //===============
+
+// console.clear();
+
+//=================
+
+console.log("%cHello World", "font-size: 50px; color: yellow");
