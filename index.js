@@ -5715,4 +5715,177 @@ console.log('Test')  */
 
 //=================
 
-console.log("%cHello World", "font-size: 50px; color: yellow");
+// console.log("%cHello World", "font-size: 50px; color: yellow");
+
+//======Lesson 27==========build-in capabilities of Regular Expression===========
+
+// const regexp = /test/g;
+// console.log(regexp);
+
+// const regexp1 = RegExp("test", "gm");
+// const regexp1 = RegExp("test", "m");
+// const regexp1 = RegExp("test", "g");
+
+// const regexp1 = RegExp("test", "gms");
+
+// const regexp1 = RegExp("test", "m");
+
+// const regexp1 = RegExp("test", "mi");
+
+// console.log(regexp1);
+
+// console.log(regexp1.flags);
+
+// console.log(regexp1.global);
+
+// console.log(regexp1.multiline);
+
+// console.log(regexp1.dotAll);
+
+// console.log(regexp1.ignoreCase);
+
+//====
+
+// const regexp = /test/gims;
+
+// const result = regexp.exec("This is test");
+
+// const regexp = /.est/gims;
+// const result = regexp.exec("This is test and test");
+
+// console.log(result);
+
+// //===================
+
+// const regexp = /(.e)(st)/gims;
+// const result = regexp.exec("This is test and est");
+
+// console.log(result);
+// console.log(result[1]);
+// console.log(result[0]);
+// console.log(result[2]);
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+// const result = regexp.exec("This is test and est");
+
+// console.log(result);
+
+// console.log(result.groups);
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+// console.log(regexp.exec("This is test and est"));
+
+// console.log(regexp.exec("This is test and est"));
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+// console.log(regexp.exec("This is test and est"));
+
+// console.log(regexp.exec("This is test and est"));
+
+// console.log(regexp.exec("This is test and est"));
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+// console.log(regexp.test("This is test and est"));
+
+//===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+// console.log(regexp.source);
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+// regexp.lastIndex = 9;
+
+// console.log(regexp.exec("This is test and est"));
+
+// console.log(regexp.exec("This is test and est"));
+
+//===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+// const test = "This is test and est";
+
+// console.log(test.replace(regexp, "###"));
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+// const test = "This is test and est";
+
+// console.log(test.replaceAll(regexp, "###"));
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/ims;
+
+// const test = "This is test and est";
+
+// console.log(test.replace(regexp, "###"));
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/ims;
+
+// const test = "This is test and est";
+
+// console.log(test.search(regexp));
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/ims;
+
+// const test = "This is test and est";
+
+// console.log(test.match(regexp));
+
+//===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+// const test = "This is test and est";
+
+// console.log(test.match(regexp));
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/ims;
+
+// const test = "This is test and est";
+
+// console.log(test.matchAll(regexp));
+
+// //===================
+
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+// const test = "This is test and est";
+
+// console.log(test.matchAll(regexp));    /// Object [RegExp String Iterator] {}
+
+//===================
+
+const regexp = /(?<group1>.e)(?<group2>st)/gims;
+
+const test = "This is test and est";
+
+const result = test.matchAll(regexp);
+
+console.log(result.next());
+console.log(result.next());
+console.log(result.next());
