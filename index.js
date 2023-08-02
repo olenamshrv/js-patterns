@@ -5880,12 +5880,244 @@ console.log('Test')  */
 
 //===================
 
-const regexp = /(?<group1>.e)(?<group2>st)/gims;
+// const regexp = /(?<group1>.e)(?<group2>st)/gims;
 
-const test = "This is test and est";
+// const test = "This is test and est";
 
-const result = test.matchAll(regexp);
+// const result = test.matchAll(regexp);
 
-console.log(result.next());
-console.log(result.next());
-console.log(result.next());
+// console.log(result.next());
+// console.log(result.next());
+// console.log(result.next());
+
+//===========Lesson 28======Error handling==============================
+
+// try {
+//   const a = 10;
+
+//   a = 5;
+// } catch {
+//   console.log("Hello World");
+// }
+
+// console.log(2);
+
+//==================================
+
+// try {
+//   const a = 10;
+
+//   a = 5;
+// } catch (err) {
+//   console.log(err);
+// }
+
+// console.log(2);
+
+//==========================
+
+// try {
+//   const a = 10;
+
+//   a = 5;
+// } catch (err) {
+//   console.log(err);
+// } finally {
+//   console.log(2);
+// }
+
+//==========================
+
+// try {
+//   const a = 10;
+
+//   a = 5;
+
+//   console.log(1);
+// } catch (err) {
+//   console.log(err);
+// } finally {
+//   console.log(2);
+// }
+
+// ///==
+
+// function getUserData(userId) {
+//   try {
+//     const a = 10;
+
+//     a = 5;
+
+//     //... робить запит до бази даних
+//   } catch (err) {
+//     // er - помилка про те що дані з сервера не можуть бути отримані
+//     const newError = new Error(
+//       `Помилка. Неможливо отримати дані користувача ${userId}.`,
+//       {
+//         cause: err,
+//       }
+//     );
+//     console.log(newError);
+//   }
+// }
+
+// getUserData(34345);
+
+// ///==
+
+// function getUserData(userId) {
+//   try {
+//     const a = 10;
+
+//     a = 5;
+
+//     //... робить запит до бази даних
+//   } catch (err) {
+//     // er - помилка про те що дані з сервера не можуть бути отримані
+//     throw (newError = new Error(
+//       `Помилка. Неможливо отримати дані користувача ${userId}.`,
+//       {
+//         cause: err,
+//       }
+//     ));
+//     console.log(newError);
+//   }
+// }
+
+// function updateUserDate(userId) {
+//   try {
+//     const data = getUserData(userId);
+
+//     data.name = "Ivan";
+
+//     //....
+//   } catch (err) {
+//     // er - помилка про те що дані з сервера не можуть бути отримані
+//     const newError = new Error(
+//       `Помилка. Неможливо оновити дані користувача ${userId}.`,
+//       {
+//         cause: err,
+//       }
+//     );
+//     console.log(newError);
+//   }
+// }
+
+// updateUserDate(554343);
+
+///==
+
+function getUserData(userId) {
+  try {
+    const a = 10;
+
+    a = 5;
+
+    //... робить запит до бази даних
+  } catch (err) {
+    // er - помилка про те що дані з сервера не можуть бути отримані
+    throw (newError = new Error(
+      `Помилка. Неможливо отримати дані користувача ${userId}.`,
+      {
+        cause: err,
+      }
+    ));
+    console.log(newError);
+  }
+}
+
+function updateUserDate(userId) {
+  try {
+    const data = getUserData(userId);
+
+    data.name = "Ivan";
+
+    //....
+  } catch (err) {
+    // er - помилка про те що дані з сервера не можуть бути отримані
+    const newError = new Error(
+      `Помилка. Неможливо оновити дані користувача ${userId}.`,
+      {
+        cause: err,
+      }
+    );
+    // console.log(newError.message);
+    // console.log(newError.cause);
+    // console.log(newError.stack);
+    console.log(newError.toString());
+  }
+}
+
+updateUserDate(554343);
+
+// function sumNum(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     throw new Error("аргументи не є числами");
+//   }
+//   return a + b;
+// }
+
+// sumNum(10, "abc");
+
+// function sumNum(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     throw new Error("Aргументи не є числами");
+//   }
+//   return a + b;
+// }
+
+// // try {
+// //   sumNum(10, "abc");
+// // } catch (err) {
+// //   console.log(err.message);
+// // }
+
+// try {
+//   sumNum(10, "abc");
+// } catch (err) {
+//   console.log(err.name);
+// }
+
+// //==
+
+// function sumNum(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     throw new TypeError("Aргументи не є числами");
+//   }
+//   return a + b;
+// }
+
+// try {
+//   sumNum(10, "abc");
+// } catch (err) {
+//   console.log(err.name);
+// }
+
+//==
+
+const ERROR_ID_LIST = {
+  NOT_NUMBER: 1,
+};
+
+// const ERROR_ID_LIST = new Map(["NOT_NUMBER", 10]);
+
+function sumNum(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    const error = new TypeError("Aргументи не є числами");
+    error.name = ERROR_ID_LIST.NOT_NUMBER;
+    throw error;
+
+    // return 0;
+    // return false;
+  }
+  return a + b;
+}
+
+try {
+  sumNum(10, "abc");
+} catch (err) {
+  if (err.name === ERROR_ID_LIST.NOT_NUMBER) {
+    sumNum(10, 0);
+  }
+  //   console.log(err.name);
+}
