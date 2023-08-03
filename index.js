@@ -6007,48 +6007,48 @@ console.log('Test')  */
 
 ///==
 
-function getUserData(userId) {
-  try {
-    const a = 10;
+// function getUserData(userId) {
+//   try {
+//     const a = 10;
 
-    a = 5;
+//     a = 5;
 
-    //... робить запит до бази даних
-  } catch (err) {
-    // er - помилка про те що дані з сервера не можуть бути отримані
-    throw (newError = new Error(
-      `Помилка. Неможливо отримати дані користувача ${userId}.`,
-      {
-        cause: err,
-      }
-    ));
-    console.log(newError);
-  }
-}
+//     //... робить запит до бази даних
+//   } catch (err) {
+//     // er - помилка про те що дані з сервера не можуть бути отримані
+//     throw (newError = new Error(
+//       `Помилка. Неможливо отримати дані користувача ${userId}.`,
+//       {
+//         cause: err,
+//       }
+//     ));
+//     console.log(newError);
+//   }
+// }
 
-function updateUserDate(userId) {
-  try {
-    const data = getUserData(userId);
+// function updateUserDate(userId) {
+//   try {
+//     const data = getUserData(userId);
 
-    data.name = "Ivan";
+//     data.name = "Ivan";
 
-    //....
-  } catch (err) {
-    // er - помилка про те що дані з сервера не можуть бути отримані
-    const newError = new Error(
-      `Помилка. Неможливо оновити дані користувача ${userId}.`,
-      {
-        cause: err,
-      }
-    );
-    // console.log(newError.message);
-    // console.log(newError.cause);
-    // console.log(newError.stack);
-    console.log(newError.toString());
-  }
-}
+//     //....
+//   } catch (err) {
+//     // er - помилка про те що дані з сервера не можуть бути отримані
+//     const newError = new Error(
+//       `Помилка. Неможливо оновити дані користувача ${userId}.`,
+//       {
+//         cause: err,
+//       }
+//     );
+//     // console.log(newError.message);
+//     // console.log(newError.cause);
+//     // console.log(newError.stack);
+//     console.log(newError.toString());
+//   }
+// }
 
-updateUserDate(554343);
+// updateUserDate(554343);
 
 // function sumNum(a, b) {
 //   if (typeof a !== "number" || typeof b !== "number") {
@@ -6095,29 +6095,718 @@ updateUserDate(554343);
 
 //==
 
-const ERROR_ID_LIST = {
-  NOT_NUMBER: 1,
+// const ERROR_ID_LIST = {
+//   NOT_NUMBER: 1,
+// };
+
+// // const ERROR_ID_LIST = new Map(["NOT_NUMBER", 10]);
+
+// function sumNum(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     const error = new TypeError("Aргументи не є числами");
+//     error.name = ERROR_ID_LIST.NOT_NUMBER;
+//     throw error;
+
+//     // return 0;
+//     // return false;
+//   }
+//   return a + b;
+// }
+
+// try {
+//   sumNum(10, "abc");
+// } catch (err) {
+//   if (err.name === ERROR_ID_LIST.NOT_NUMBER) {
+//     sumNum(10, 0);
+//   }
+//   //   console.log(err.name);
+// }
+
+//=========Lesson 29=====OOP===================
+
+// const Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = { ...Animal };
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// dog.say();
+
+//====
+
+// const dog = { ...Animal, name: "Slata", voice: "Гав" };
+
+// dog.say();
+
+//====
+
+// const dog = { name: "Бобік", ...Animal };
+
+// // dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// dog.say();
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// Animal = null;
+
+// const dog = { name: "Бобік", ...Animal };
+
+// // dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// dog.say();
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = { name: "Бобік", ...Animal };
+
+// // dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// dog.say();
+
+// console.log(dog);
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = { name: "Бобік", ...Animal };
+
+// // dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// dog.say();
+
+// console.log(dog);
+
+// Animal.go = function () {
+//   console.log(`${this.name} біжить`);
+// };
+
+// dog.go();
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// dog.say();
+
+// console.log(dog);
+
+// Animal.go = function () {
+//   console.log(`${this.name} біжить`);
+// };
+
+// dog.go();
+
+// console.log(dog.__proto__);
+
+// console.log(Object.getPrototypeOf(dog));
+
+// console.log(Object.getPrototypeOf(dog) === Animal);
+
+// console.log(Animal.isPrototypeOf(dog));
+
+// // Object.setPrototypeOf(dog, null);
+// // console.log(Object.getPrototypeOf(dog));
+
+// // Object.setPrototypeOf(dog, "123");
+// Object.setPrototypeOf(dog, { asd: "123" });
+// console.log(Object.getPrototypeOf(dog));
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// dog.say();
+
+// dog.age = 10;
+// console.log(dog.age);
+
+// dog.age = 15;
+// console.log(dog.age);
+
+// delete dog.age;
+// console.log(dog.age);
+
+// Animal.go = function () {
+//   console.log(`${this.name} біжить`);
+// };
+
+// dog.go();
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "age", {
+//   //   value: 10,
+//   set(value) {
+//     this._age = value * 2;
+//   },
+//   get() {
+//     return `${this._age || 0} років`;
+//   },
+// });
+// console.log(dog.age);
+
+// dog.age = 15;
+// console.log(dog.age);
+
+// delete dog.age;
+// console.log(dog.age);
+
+// console.log(dog);
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "age", {
+//   //   value: 10,
+//   set(value) {
+//     this._age = value * 2;
+//   },
+//   get() {
+//     return `${this._age || 0} років`;
+//   },
+//   writable: true, // TypeError: Invalid property descriptor. Cannot both specify accessors and a value or writable attribute
+//   configurable: true,
+//   enumerable: true,
+// });
+// console.log(dog.age);
+
+// dog.age = 15;
+// console.log(dog.age);
+
+// delete dog.age;
+// console.log(dog.age);
+
+// console.log(dog);
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "location", {
+//   value: "Ukraine",
+//   writable: true,
+//   configurable: true,
+//   enumerable: true,
+// });
+
+// console.log(dog.location);
+
+// delete dog.location;
+// console.log(dog.location);
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "location", {
+//   value: "Ukraine",
+//   writable: true,
+
+//   enumerable: true,
+// });
+
+// console.log(dog.location);
+
+// delete dog.location;
+// console.log(dog.location);
+
+// console.log(Object.keys(dog));
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "location", {
+//   value: "Ukraine",
+//   writable: true,
+// });
+
+// console.log(dog.location);
+
+// delete dog.location;
+// console.log(dog.location);
+
+// console.log(Object.keys(dog));
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "location", {
+//   value: "Ukraine",
+//   writable: true,
+// });
+
+// console.log(dog.location);
+
+// delete dog.location;
+// console.log(dog.location);
+
+// dog.location = "USA";
+
+// console.log(dog.location);
+
+//=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "location", {
+//   value: "Ukraine",
+// });
+
+// console.log(dog.location);
+
+// delete dog.location;
+// console.log(dog.location);
+
+// dog.location = "USA";
+
+// console.log(dog.location);
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "age", {
+//   set(value) {
+//     this._age = value * 2;
+//   },
+//   get() {
+//     return `${this._age || 0} років`;
+//   },
+// });
+
+// console.log(dog._age);
+
+//=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "age", {
+//   set(value) {
+//     this._age = value * 2;
+//   },
+//   get() {
+//     return `${this._age || 0} років`;
+//   },
+// });
+
+// console.log(dog._age);
+
+// dog.age = 15;
+// console.log(dog.age);
+
+// delete dog.age;
+// console.log(dog.age);
+
+// console.log(dog._age);
+
+// delete dog._age;
+// console.log(dog.age);
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "_age", {
+//   value: 5,
+//   writable: true,
+// });
+
+// Object.defineProperty(dog, "age", {
+//   set(value) {
+//     this._age = value * 2;
+//   },
+//   get() {
+//     return `${this._age} років`;
+//   },
+// });
+
+// console.log(dog._age);
+
+// dog.age = 15;
+// console.log(dog.age);
+
+// delete dog.age;
+// console.log(dog.age);
+
+// console.log(dog._age);
+
+// delete dog._age;
+// console.log(dog.age);
+
+// console.log(Object.keys(dog));
+
+//=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "_age", {
+//   value: 5,
+//   writable: true,
+// });
+
+// Object.defineProperty(dog, "age", {
+//   set(value) {
+//     this._age = value * 2;
+//   },
+//   get() {
+//     return `${this._age} років`;
+//   },
+// });
+
+// console.log(dog._age);
+
+// dog.age = 15;
+// console.log(dog.age);
+
+// delete dog.age;
+// console.log(dog.age);
+
+// console.log(dog._age);
+
+// delete dog._age;
+// console.log(dog.age);
+
+// console.log(Object.keys(dog));
+
+// dog.__proto__ = null;  //incorrect
+
+// //=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "_space", {
+//   value: 0,
+//   writable: true,
+// });
+
+// Object.defineProperty(dog, "space", {
+//   set(value) {
+//     this._space = value * 4;
+//   },
+//   get() {
+//     return `${this._space}px`;
+//   },
+// });
+
+// console.log(dog.space);
+
+// dog.space = 4;
+// console.log(dog.space);
+
+//=============
+
+// let Animal = {
+//   name: "Тварина",
+//   voice: "Звук",
+//   say() {
+//     console.log(`${this.name} каже ${this.voice}`);
+//   },
+// };
+
+// const dog = Object.create(Animal);
+
+// dog.name = "Бобік";
+// dog.voice = "Гав";
+
+// Object.defineProperty(dog, "_space", {
+//   value: 0,
+//   writable: true,
+// });
+
+// Object.defineProperty(dog, "space", {
+//   set(value) {
+//     this._space = value * 4;
+//   },
+//   get() {
+//     return `${this._space}px`;
+//   },
+// });
+
+// console.log(dog.space);
+
+// dog.space = 4;
+// // console.log(Object.getOwnPropertyDescriptor(dog, "space"));
+
+// // console.log(Object.getOwnPropertyDescriptor(dog, "_space"));
+
+// console.log(dog.hasOwnProperty("say"));
+// console.log(dog.say);
+
+// console.log(dog.hasOwnProperty("voice"));
+// console.log(dog.voice);
+
+//=======================================
+
+//==one file
+
+const Tag = {
+  render(value) {
+    // return `<>${value}<>`;
+    return `<${this.className}>${value}<>`;
+  },
+  className: null,
 };
 
-// const ERROR_ID_LIST = new Map(["NOT_NUMBER", 10]);
+//====  2nd file
+const Button = Object.create(Tag);
 
-function sumNum(a, b) {
-  if (typeof a !== "number" || typeof b !== "number") {
-    const error = new TypeError("Aргументи не є числами");
-    error.name = ERROR_ID_LIST.NOT_NUMBER;
-    throw error;
+Button.render = function (value = "") {
+  return `<button class="${this.className}" style = "${this.style}">${value}<button>`;
+};
 
-    // return 0;
-    // return false;
-  }
-  return a + b;
-}
+//==== 3rd file
 
-try {
-  sumNum(10, "abc");
-} catch (err) {
-  if (err.name === ERROR_ID_LIST.NOT_NUMBER) {
-    sumNum(10, 0);
-  }
-  //   console.log(err.name);
-}
+const mainButton = Object.create(Button, {
+  style: {
+    value: "background: red;",
+    writable: true,
+  },
+  className: {
+    value: "my-button",
+  },
+});
+
+console.log(mainButton.render("Click"));
+console.log(mainButton.className);
+
+//== 4th file
+
+const Input = Object.create(Tag);
+
+Input.render = function () {
+  return `<input placeholder="${this.placeholder}" style = "${this.style}"/>`;
+};
+
+const loginInput = Object.create(Input, {
+  style: {
+    value: "border: 1px solid red;",
+    writable: true,
+  },
+  placeholder: {
+    value: "Login...",
+  },
+});
+
+console.log(loginInput.render());
+console.log(loginInput.className);
+
+//===== 5th file
+
+const ServerRequest = {
+  data: null,
+  getData() {
+    //... return;
+  },
+  render() {
+    //...  вивід даних
+    this.data = this.getData();
+
+    return `...`;
+  },
+};
+
+// ===   6th file
+
+const Page = {
+  components: [],
+  path: "/.../.../",
+  render() {
+    //...
+  },
+};
+
+//==
