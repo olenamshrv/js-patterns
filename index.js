@@ -7228,79 +7228,79 @@ console.log('Test')  */
 
 //======================================
 
-function User(data) {
-  if (new.target) {
-    const { login = null, password = null, isAdmin = null, age = 0 } = data;
-    const role = isAdmin ? "Admin" : "User";
+// function User(data) {
+//   if (new.target) {
+//     const { login = null, password = null, isAdmin = null, age = 0 } = data;
+//     const role = isAdmin ? "Admin" : "User";
 
-    const object = Object.assign(this, {
-      login,
-      password,
-      role,
-      age,
-    });
+//     const object = Object.assign(this, {
+//       login,
+//       password,
+//       role,
+//       age,
+//     });
 
-    if (role === "Admin") {
-      object.verify = function (password) {
-        console.debug(password, this.password, this);
-        return this.password === password;
-      };
-    }
+//     if (role === "Admin") {
+//       object.verify = function (password) {
+//         console.debug(password, this.password, this);
+//         return this.password === password;
+//       };
+//     }
 
-    if (age >= 50) {
-      object.login = String(object.login).toUpperCase();
-    }
+//     if (age >= 50) {
+//       object.login = String(object.login).toUpperCase();
+//     }
 
-    object.toString = function () {
-      return `Користувач ${this.login}`;
-    };
+//     object.toString = function () {
+//       return `Користувач ${this.login}`;
+//     };
 
-    return object;
+//     return object;
 
-    // return this;
-  } else {
-    return new User(data);
-  }
-}
+//     // return this;
+//   } else {
+//     return new User(data);
+//   }
+// }
 
-const registerData = {
-  login: "Ivan",
-  password: "123qwe342us",
-  isAdmin: true,
-};
+// const registerData = {
+//   login: "Ivan",
+//   password: "123qwe342us",
+//   isAdmin: true,
+// };
 
-User.prototype.test = "Hello World";
+// User.prototype.test = "Hello World";
 
-const user = User(registerData);
-console.log(user.test);
+// const user = User(registerData);
+// console.log(user.test);
 
-console.log(user.toString());
+// console.log(user.toString());
 
-//===
+// //===
 
-const adminData = {
-  login: "Ivan",
-  password: "123qwe342adm",
-  isAdmin: true,
-};
+// const adminData = {
+//   login: "Ivan",
+//   password: "123qwe342adm",
+//   isAdmin: true,
+// };
 
-const adminUser = User(adminData);
+// const adminUser = User(adminData);
 
-console.log(adminUser.password);
+// console.log(adminUser.password);
 
 //====
 
-const testData = {
-  login: "Ivan",
-  password: "123qwe342",
-  age: 50,
-  isAdmin: true,
-};
+// const testData = {
+//   login: "Ivan",
+//   password: "123qwe342",
+//   age: 50,
+//   isAdmin: true,
+// };
 
-const testUser = new User(testData);
-console.log(testUser.login);
+// const testUser = new User(testData);
+// console.log(testUser.login);
 
-console.log(Object.getPrototypeOf(testUser) === User.prototype);
+// console.log(Object.getPrototypeOf(testUser) === User.prototype);
 
 //==
 
@@ -7349,40 +7349,430 @@ console.log(Object.getPrototypeOf(testUser) === User.prototype);
 
 //==========================
 
-console.log("===============================");
+// console.log("===============================");
 
-const verifyUser = user.verify.bind(user, "123qwe342us");
+// const verifyUser = user.verify.bind(user, "123qwe342us");
 
-function Animal(name) {
-  this.name = name;
+// function Animal(name) {
+//   this.name = name;
+// }
+
+// function Person(name, age) {
+//   //   Animal.apply;
+//   Animal.call(this, name);
+//   this.age = age;
+// }
+
+// const user2 = new Person("Ivanddd", "32");
+
+// console.log(user2.name);
+
+// function Person2(name, age) {
+//   //   Animal.apply;
+//   Animal.apply(this, [name]);
+//   this.age = age;
+// }
+// const user3 = new Person("Ivanddd333", "39");
+
+// console.log(user3.name);
+
+// //============
+
+// const Person3 = function (name, age) {
+//   //   Animal.apply;
+//   Animal.call(this, name);
+//   this.age = age;
+// };
+// const user4 = new Person3("Ivanddd33443", "39");
+
+// console.log(user4.name);
+
+//=================Lesson 31====Classes===============
+
+// const User1 = {
+//   login: null,
+//   password: null,
+//   role: null,
+//   age: null,
+// };
+
+// function Animal() {
+//   this.test = "Hello World";
+// }
+
+// function User({ login, password, role, age }) {
+//   //   Animal.call(this);
+//   Animal.apply(this);
+//   this.login = login;
+//   this.password = password;
+//   this.role = role;
+//   this.age = age;
+
+//   Object.defineProperty(this, {
+//     name: {
+//       get() {},
+//       set() {},
+//     },
+//   });
+// }
+
+// console.log(new User({}).test);
+
+// //================
+
+// class User {
+//   login = null;
+//   password = null;
+//   role = null;
+//   age = null;
+
+//   isAdmin() {
+//     // return this.role === "Admin";
+//     return this.role !== "Admin";
+//   }
+// }
+
+// const user = new User();
+
+// // console.log(user);
+// // console.log(user.__proto__);
+// // console.log(User.prototype);
+
+// // console.log(User.prototype === user.__proto__);
+
+// // console.log(user);
+
+// console.log(user.isAdmin());
+
+// function verifyAdmin(fn) {
+//   const result = fn();
+
+//   if (!result) {
+//     throw new Error("Не адмін");
+//   }
+
+//   return true;
+// }
+
+// // verifyAdmin(user.isAdmin);
+// verifyAdmin(user.isAdmin.bind(this));
+
+// //==================
+
+// class User {
+//   login = null;
+//   password = null;
+//   role = null;
+//   age = null;
+
+//   isAdmin = () => {
+//     return this.role === "Admin";
+//   };
+// }
+
+// const user = new User();
+
+// console.log(user.isAdmin());
+
+// function verifyAdmin(fn) {
+//   const result = fn();
+
+//   if (!result) {
+//     throw new Error("Не адмін");
+//   }
+
+//   return true;
+// }
+
+// verifyAdmin(user.isAdmin.bind(this));
+
+// //==================
+
+// class User {
+//   login = null;
+//   password = null;
+//   role = null;
+//   static age = null;
+
+//   isAdmin = () => {
+//     return this.role === "Admin";
+//   };
+
+//   createAdminUser = (login) => {
+//     const password = this.generateRandomPassword();
+//     return new User();
+//   };
+
+//   static generateRandomPassword = () => {
+//     return true;
+//   };
+
+//   //   verify(user1, user2) {
+//   //     return user1.login === user2.login;
+//   //   }
+
+//   //   verify = (user) {
+//   //     return this.login === user.login;
+//   //   }
+// }
+
+// const user = new User();
+
+// //   console.log(user.isAdmin());
+
+// function verifyAdmin(fn) {
+//   const result = fn();
+
+//   if (!result) {
+//     throw new Error("Не адмін");
+//   }
+
+//   return true;
+// }
+
+// //   verifyAdmin(user.isAdmin.bind(this));
+
+// // console.log(user);
+// // console.log(User);
+
+// // console.log(User.generateRandomPassword());
+// // console.log(user.generateRandomPassword());
+
+// console.log(user);
+// console.log(User);
+
+// //==================
+
+// class User {
+//   login = null;
+//   password = null;
+//   role = null;
+//   static age = null;
+
+//   id = null;
+//   #id = 1000;
+
+//   isAdmin = () => {
+//     console.log(this.#id);
+//     this.#createAdminUser();
+//     return this.role === "Admin";
+//   };
+
+//   #createAdminUser = (login) => {
+//     const password = this.generateRandomPassword();
+//     return new User();
+//   };
+
+//   static generateRandomPassword = () => {
+//     return true;
+//   };
+// }
+
+// const user = new User();
+
+// function verifyAdmin(fn) {
+//   const result = fn();
+
+//   if (!result) {
+//     throw new Error("Не адмін");
+//   }
+
+//   return true;
+// }
+
+// // console.log(user.id);
+// // console.log(user.#id);
+// // console.log(User);
+
+// console.log(user);
+
+//=====================================
+
+// class User {
+//   login = null;
+//   password = null;
+
+//   #role = null;
+
+//   static age = null;
+
+//   id = null;
+//   #id = 1000;
+
+//   isAdmin = () => {
+//     console.log(this.#id);
+//     this.#createAdminUser();
+//     return this.role === "Admin";
+//   };
+
+//   #createAdminUser = (login) => {
+//     const password = this.generateRandomPassword();
+//     return new User();
+//   };
+
+//   static generateRandomPassword = () => {
+//     return true;
+//   };
+
+//   get admin() {
+//     return this.#role === "Admin";
+//   }
+
+//   set admin(value) {
+//     this.#role = "Admin";
+//   }
+// }
+
+// const user = new User();
+
+// function verifyAdmin(fn) {
+//   const result = fn();
+
+//   if (!result) {
+//     throw new Error("Не адмін");
+//   }
+
+//   return true;
+// }
+
+// // console.log(user.id);
+// // console.log(user.#id);
+// // console.log(User);
+
+// console.log(user);
+
+// console.log(user.admin);
+
+// user.admin = true;
+
+// console.log(user.admin);
+
+// console.log(user.#role);
+
+// //==================
+
+// class User {
+//   constructor(login, password) {
+//     this.login = login;
+//     this.password = password;
+//   }
+
+//   login = null;
+//   password = null;
+
+//   #role = null;
+
+//   static age = null;
+
+//   id = null;
+//   #id = 1000;
+
+//   isAdmin = () => {
+//     console.log(this.#id);
+//     this.#createAdminUser();
+//     return this.role === "Admin";
+//   };
+
+//   #createAdminUser = (login) => {
+//     const password = this.generateRandomPassword();
+//     return new User();
+//   };
+
+//   static generateRandomPassword = () => {
+//     return true;
+//   };
+
+//   get admin() {
+//     return this.#role === "Admin";
+//   }
+
+//   set admin(value) {
+//     this.#role = "Admin";
+//   }
+// }
+
+// const user = new User("Ivan", "934kidfjhwe");
+
+// function verifyAdmin(fn) {
+//   const result = fn();
+
+//   if (!result) {
+//     throw new Error("Не адмін");
+//   }
+
+//   return true;
+// }
+
+// // console.log(user.id);
+// // console.log(user.#id);
+// // console.log(User);
+
+// // console.log(user);
+
+// // console.log(user.admin);
+
+// // user.admin = true;
+
+// // console.log(user.admin);
+
+// console.log(user);
+
+//==================
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  test = () => {
+    console.log("Hello world", this.name);
+  };
 }
 
-function Person(name, age) {
-  //   Animal.apply;
-  Animal.call(this, name);
-  this.age = age;
+class User extends Person {
+  constructor(login, password) {
+    super(login);
+    this.login = login;
+    this.password = password;
+  }
+
+  login = null;
+  password = null;
+
+  #role = null;
+
+  static age = null;
+
+  id = null;
+  #id = 1000;
+
+  isAdmin = () => {
+    console.log(this.#id);
+    this.#createAdminUser();
+    return this.role === "Admin";
+  };
+
+  #createAdminUser = (login) => {
+    const password = this.generateRandomPassword();
+    return new User();
+  };
+
+  static generateRandomPassword = () => {
+    return true;
+  };
+
+  get admin() {
+    return this.#role === "Admin";
+  }
+
+  set admin(value) {
+    this.#role = "Admin";
+  }
 }
 
-const user2 = new Person("Ivanddd", "32");
+const user = new User("Ivan", "934kidfjhwe");
 
-console.log(user2.name);
+// console.log(user.test());
 
-function Person2(name, age) {
-  //   Animal.apply;
-  Animal.apply(this, [name]);
-  this.age = age;
-}
-const user3 = new Person("Ivanddd333", "39");
+console.log(user instanceof User);
 
-console.log(user3.name);
-
-//============
-
-const Person3 = function (name, age) {
-  //   Animal.apply;
-  Animal.call(this, name);
-  this.age = age;
-};
-const user4 = new Person3("Ivanddd33443", "39");
-
-console.log(user4.name);
+console.log(user instanceof Person);
