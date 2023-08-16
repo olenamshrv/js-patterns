@@ -1449,58 +1449,268 @@
 
 //=================Mediator==============================
 
-class User {
-  // constructor(name, mediator) {
-  //   this.name = name;
-  //   this.mediator = mediator;
-  // }
+// class User {
+//   // constructor(name, mediator) {
+//   //   this.name = name;
+//   //   this.mediator = mediator;
+//   // }
 
-  constructor(name, chat) {
-    this.name = name;
-    this.chat = chat;
-  }
+//   constructor(name, chat) {
+//     this.name = name;
+//     this.chat = chat;
+//   }
 
-  sendMessage(message) {
-    console.log(`${this.name} відправив повідомлення ${message}`);
-    // return message;
-    return this.chat.sendMessage(this, message);
-  }
+//   sendMessage(message) {
+//     console.log(`${this.name} відправив повідомлення ${message}`);
+//     // return message;
+//     return this.chat.sendMessage(this, message);
+//   }
 
-  receiveMessage(user, message) {
-    console.log(
-      `${this.name} отримав повідомлення від ${user.name}: ${message}`
-    );
-  }
-}
+//   receiveMessage(user, message) {
+//     console.log(
+//       `${this.name} отримав повідомлення від ${user.name}: ${message}`
+//     );
+//   }
+// }
 
-class Chat {
-  constructor() {
-    this.users = [];
-  }
+// class Chat {
+//   constructor() {
+//     this.users = [];
+//   }
 
-  //Додавання користувача до чату
-  addUser(user) {
-    this.users.push(user);
-  }
+//   //Додавання користувача до чату
+//   addUser(user) {
+//     this.users.push(user);
+//   }
 
-  //Відправлення повідомлення в чат
-  sendMessage(sender, message) {
-    for (const user of this.users) {
-      if (user !== sender) {
-        //Відправка повідомлення в message
-        user.receiveMessage(sender, message);
-      }
-    }
-  }
-}
+//   //Відправлення повідомлення в чат
+//   sendMessage(sender, message) {
+//     for (const user of this.users) {
+//       if (user !== sender) {
+//         //Відправка повідомлення в message
+//         user.receiveMessage(sender, message);
+//       }
+//     }
+//   }
+// }
 
-const chatMediator = new Chat();
-const user1 = new User("John Doe", chatMediator);
-const user2 = new User("Jane Smith", chatMediator);
-const user3 = new User("Mike Dallas", chatMediator);
+// const chatMediator = new Chat();
+// const user1 = new User("John Doe", chatMediator);
+// const user2 = new User("Jane Smith", chatMediator);
+// const user3 = new User("Mike Dallas", chatMediator);
 
-chatMediator.addUser(user1);
-chatMediator.addUser(user2);
-chatMediator.addUser(user3);
+// chatMediator.addUser(user1);
+// chatMediator.addUser(user2);
+// chatMediator.addUser(user3);
 
-user1.sendMessage("Привіт, всім!");
+// user1.sendMessage("Привіт, всім!");
+
+//====Lesson 34=======Event loop======================================
+
+// console.log("1");
+// console.log("2");
+// console.log("3");
+
+// //==
+
+// function consoleLog() {
+//   const text = "Hello world";
+//   console.log("4");
+//   console.log("5");
+//   console.log("6");
+// }
+
+// console.log("1");
+// console.log("2");
+// console.log("3");
+
+// consoleLog();
+
+// // for (let i = 0; i < 10000; i++) {
+// //   console.log(i);
+// // }
+
+// for (let i = 0; i < 10000000000; i++) {
+//   console.log(i);
+// }
+
+//==
+
+// function consoleLog() {
+//   const text = "Hello world";
+//   console.log("4");
+//   console.log("5");
+//   console.log("6");
+
+//   return consoleLog();
+// }
+
+// console.log("1");
+// console.log("2");
+// console.log("3");
+
+// consoleLog();
+
+// for (let i = 0; i < 10000000000; i++) {
+//   console.log(i);
+// }
+
+//===========
+
+// console.log("Перший");
+
+// setTimeout(() => {
+//   console.log("Другий");
+// }, 1000 * 2);
+
+// console.log("Третій");
+
+// //===============
+
+// setTimeout(() => {
+//   console.log("Перший");
+// }, 0);
+
+// setTimeout(() => {
+//   console.log("Другий");
+// }, 0);
+
+// console.log("Третій");
+// console.log("Четвертий");
+
+// //===============
+
+// setImmediate(() => {
+//   console.log("Перший");
+// });
+
+// setImmediate(() => {
+//   console.log("Другий");
+// });
+
+// console.log("Третій");
+// console.log("Четвертий");
+
+//===============
+
+// setTimeout(() => {
+//   console.log("Перший");
+// }, 0);
+
+// setImmediate(() => {
+//   console.log("Другий");
+// });
+
+// console.log("Третій");
+// console.log("Четвертий");
+
+// //===============
+
+// setImmediate(() => {
+//   console.log("Перший");
+// });
+
+// setTimeout(() => {
+//   console.log("Другий");
+// }, 0);
+
+// console.log("Третій");
+// console.log("Четвертий");
+
+// //===============
+
+// setImmediate(() => {
+//   console.log("Перший");
+// });
+
+// setTimeout(() => {
+//   console.log("Другий");
+// }, 5000);
+
+// setInterval(() => {
+//   console.log("П'ятий");
+// }, 1000);
+
+// console.log("Третій");
+// console.log("Четвертий");
+
+// //===============
+
+// setImmediate(() => {
+//   console.log("Перший");
+// });
+
+// setTimeout(() => {
+//   console.log("Другий");
+// }, 5000);
+
+// const intervalId = setInterval(() => {
+//   console.log("П'ятий");
+// }, 1000);
+
+// setTimeout(() => {
+//   clearInterval(intervalId);
+// }, 5000);
+
+// console.log("Третій");
+// console.log("Четвертий");
+
+// //===============
+
+// setImmediate(() => {
+//   console.log("Перший");
+// });
+
+// const intervalId = setInterval(() => {
+//   console.log("П'ятий");
+// }, 1000);
+
+// setTimeout(() => {
+//   console.log("Другий");
+//   clearInterval(intervalId);
+// }, 5000);
+
+// console.log("Третій");
+// console.log("Четвертий");
+
+// //===============
+
+// const immediateId = setImmediate(() => {
+//   console.log("Перший");
+// });
+
+// const intervalId = setInterval(() => {
+//   console.log("П'ятий");
+// }, 1000);
+
+// setTimeout(() => {
+//   console.log("Другий");
+//   clearInterval(intervalId);
+// }, 5000);
+
+// console.log("Третій");
+// console.log("Четвертий");
+
+// clearImmediate(immediateId);
+
+//===============
+
+const immediateId = setImmediate(() => {
+  console.log("Перший");
+});
+
+const intervalId = setInterval(() => {
+  console.log("П'ятий");
+}, 1000);
+
+const timeoutId = setTimeout(() => {
+  console.log("Другий");
+  clearInterval(intervalId);
+}, 5000);
+
+console.log("Третій");
+console.log("Четвертий");
+
+clearImmediate(immediateId);
+
+clearTimeout(timeoutId);
