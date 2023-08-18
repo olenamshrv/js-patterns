@@ -3231,3 +3231,803 @@
 // }
 
 // getData();
+
+//========Lessonn 37=================Functions-Generators=============
+
+function loadFile(filename) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(`Вміст файлу ${filename}`), 2000);
+  });
+}
+
+function convertFile(content) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      // Конвертація файлу...
+      resolve(`Конвертований вміст: ${content.toUpperCase()}`);
+    }, 1000);
+  });
+}
+
+function getInfoFromFile(file) {
+  console.log(file, 111);
+
+  return Promise.resolve(file);
+}
+
+function saveFile(convertedContent) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      resolve();
+    }, 1500);
+  });
+}
+
+function sendFileToClient(callback) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      resolve();
+    }, 500);
+  });
+}
+
+async function performFile() {
+  const content = await loadFile(path);
+
+  const data = await loadFile(path);
+  const convertedContent = await getInfoFromFile(data);
+
+  await saveFile(convertFile);
+  await sendFileToClient();
+}
+
+//=================================================
+
+// function loadFile(filename) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => resolve(`Вміст файлу ${filename}`), 2000);
+//   });
+// }
+
+// function convertFile(content) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(function () {
+//       // Конвертація файлу...
+//       resolve(`Конвертований вміст: ${content.toUpperCase()}`);
+//     }, 1000);
+//   });
+// }
+
+// function getInfoFromFile(file) {
+//   console.log(file, 111);
+
+//   return Promise.resolve(file);
+// }
+
+// function saveFile(convertedContent) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(function () {
+//       resolve();
+//     }, 1500);
+//   });
+// }
+
+// function sendFileToClient(callback) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(function () {
+//       resolve();
+//     }, 500);
+//   });
+// }
+
+// async function performFile(path) {
+//   const content = await loadFile(path);
+
+//   return [
+//     async () => {
+//       const data = await convertFile(content);
+
+//       return [
+//         async () => {
+//           const convertedContent = await getInfoFromFile(data);
+//           await saveFile(convertedContent);
+//           await sendFileToClient();
+//         },
+//         data,
+//       ];
+//     },
+//     content,
+//   ];
+// }
+
+// performFile("file.png").then(([next, content]) => console.log(next, content));
+
+//==============================================
+
+// function loadFile(filename) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => resolve(`Вміст файлу ${filename}`), 2000);
+//   });
+// }
+
+// function convertFile(content) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(function () {
+//       // Конвертація файлу...
+//       resolve(`Конвертований вміст: ${content.toUpperCase()}`);
+//     }, 1000);
+//   });
+// }
+
+// function getInfoFromFile(file) {
+//   console.log(file, 111);
+
+//   return Promise.resolve(file);
+// }
+
+// function saveFile(convertedContent) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(function () {
+//       resolve();
+//     }, 1500);
+//   });
+// }
+
+// function sendFileToClient(callback) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(function () {
+//       resolve();
+//     }, 500);
+//   });
+// }
+
+// async function performFile(path) {
+//   const content = await loadFile(path);
+
+//   return [
+//     async () => {
+//       const data = await convertFile(content);
+
+//       return [
+//         async () => {
+//           const convertedContent = await getInfoFromFile(data);
+//           await saveFile(convertedContent);
+//           await sendFileToClient();
+//         },
+//         data,
+//       ];
+//     },
+//     content,
+//   ];
+// }
+
+// async function main() {
+//   const [next, content] = await performFile("file.png");
+//   console.log(next, content);
+
+//   //......
+
+//   await next();
+// }
+
+// main();
+
+// //==========================================
+
+// function* myGenerator() {
+//   console.log("Start");
+
+//   yield 1;
+
+//   console.log("Start 2");
+
+//   yield 2;
+
+//   console.log("Start 3");
+
+//   yield 3;
+
+//   console.log("End");
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator);
+// console.log(generator.value);
+// console.log(generator.done);
+
+// const result1 = generator.next();
+
+// console.log(result1);
+
+// //==
+
+// const result1 = generator.next();
+
+// console.log(result1);
+
+// const result2 = generator.next();
+
+// console.log(result2);
+
+// //==
+
+// const result1 = generator.next();
+
+// console.log(result1);
+
+// const result2 = generator.next();
+
+// console.log(result2);
+
+// const result3 = generator.next();
+
+// console.log(result3);
+
+//==
+
+// const result1 = generator.next();
+
+// console.log(result1);
+
+// const result2 = generator.next();
+
+// console.log(result2);
+
+// const result3 = generator.next();
+
+// console.log(result3);
+
+// const result4 = generator.next();
+
+// console.log(result4);
+
+//==========
+
+//==========================================
+
+// function* myGenerator() {
+//   console.log("Start");
+
+//   yield 1;
+
+//   console.log("Start 2");
+
+//   yield 2;
+
+//   console.log("Start 3");
+
+//   yield 3;
+
+//   console.log("End");
+
+//   return 4;
+// }
+
+// const generator = myGenerator();
+
+// const result1 = generator.next();
+
+// console.log(result1);
+
+// const result2 = generator.next();
+
+// console.log(result2);
+
+// const result3 = generator.next();
+
+// console.log(result3);
+
+// const result4 = generator.next();
+
+// console.log(result4);
+
+// //=============================
+
+// function* processOrder(order) {
+//   yield validateOrder(order);
+//   yield processPayment(order);
+//   yield sendOrderConfirmation(order);
+
+//   return order;
+// }
+
+// function getOrderDetails() {
+//   const order = { id: 123, product: "Товар", quantity: 2 };
+//   return order;
+// }
+
+// function validateOrder(order) {
+//   const isValid = order.quantity > 0;
+//   return isValid;
+// }
+
+// function processPayment(order) {
+//   const isPaymentSuccessful = Math.random() < 0.5;
+//   return isPaymentSuccessful;
+// }
+
+// function sendOrderConfirmation() {
+//   const isConfirmationSent = true;
+//   return isConfirmationSent;
+// }
+
+// const order = { id: 123, product: "Товар", quantity: 2 };
+
+// const orderProcessing = processOrder(order);
+
+// // console.log(orderProcessing.next());
+// // console.log(orderProcessing.next());
+// // console.log(orderProcessing.next());
+// // console.log(orderProcessing.next());
+
+// //===
+
+// const isValidateOrder = orderProcessing.next().value;
+
+// if (isValidateOrder === false) {
+//   //....
+// }
+
+// const isProcessPayment = orderProcessing.next().value;
+
+// if (isProcessPayment === false) {
+//   //=...
+// }
+
+// console.log(orderProcessing.next());
+// console.log(orderProcessing.next());
+// console.log(orderProcessing.next());
+
+// //=============================
+
+// function* generatorFunction() {
+//   yield "First value";
+//   yield "Second value";
+// }
+
+// const generator = generatorFunction();
+
+// for (let value of generator) {
+//   console.log(value);
+// }
+
+//=============================
+
+// function* generatorFunction() {
+//   yield "First value";
+//   yield "Second value";
+//   return 3;
+// }
+
+// const generator = generatorFunction();
+
+// for (let value of generator) {
+//   console.log(value);
+// }
+
+// //=============================
+
+// function* generatorOne() {
+//   yield "1 1";
+//   yield "1 2";
+//   return "1 3";
+// }
+
+// function* generatorTwo() {
+//   yield* generatorOne();
+//   yield "2 1";
+//   yield "2 2";
+// }
+
+// const generator = generatorTwo();
+
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+// //=============================
+
+// function* myGenerator() {
+//   yield 1;
+//   const value = yield 2;
+//   yield 3;
+//   yield value;
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+// console.log(generator.next().value);
+// console.log(generator.next(4).value);
+// console.log(generator.next().value);
+
+// //=============================
+
+// function* myGenerator() {
+//   const test = yield 1;
+
+//   console.log("test", test);
+
+//   const value = yield 2;
+
+//   yield 3;
+
+//   yield value;
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+// console.log(generator.next(4).value);
+// console.log(generator.next(4).value);
+// console.log(generator.next().value);
+
+//=====================================
+
+// //=============================
+
+// function* myGenerator() {
+//   const test = yield 1;
+
+//   console.log("test", test);
+
+//   const value = yield 2;
+
+//   yield 3;
+
+//   yield value;
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+
+// console.log(generator.return(10).value);
+
+// console.log(generator.next(4).value);
+// console.log(generator.next(4).value);
+// console.log(generator.next().value);
+
+// //=============================
+
+// function* myGenerator() {
+//   const test = yield 1;
+
+//   return 10;
+
+//   console.log("test", test);
+
+//   const value = yield 2;
+
+//   yield 3;
+
+//   yield value;
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+
+// console.log(generator.next().value);
+
+// console.log(generator.next(4).value);
+// console.log(generator.next(4).value);
+// console.log(generator.next().value);
+
+// //=============================
+
+// function* myGenerator() {
+//   const test = yield 1;
+
+//   console.log("test", test);
+
+//   const value = yield 2;
+
+//   yield 3;
+
+//   yield value;
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+
+// console.log(generator.return(100));
+
+// console.log(generator.next(4).value);
+// console.log(generator.next(4).value);
+// console.log(generator.next().value);
+
+// //=============================
+
+// function* myGenerator() {
+//   const test = yield 1;
+
+//   console.log("test", test);
+
+//   const value = yield 2;
+
+//   yield 3;
+
+//   yield value;
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+
+// // console.log(generator.throw(100));
+// console.log(generator.throw(new Error()));
+
+// console.log(generator.next(4).value);
+// console.log(generator.next(4).value);
+// console.log(generator.next().value);
+
+// //=============================
+
+// function* myGenerator() {
+//   try {
+//     const test = yield 1;
+
+//     console.log("test", test);
+
+//     const value = yield 2;
+
+//     yield 3;
+
+//     yield value;
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+
+// // console.log(generator.throw(100));
+// console.log(generator.throw(new Error()));
+
+// // console.log(generator.next(4).value);
+// // console.log(generator.next(4).value);
+// // console.log(generator.next().value);
+
+// //=============================
+
+// function* myGenerator() {
+//   try {
+//     const test = yield 1;
+
+//     console.log("test", test);
+
+//     const value = yield 2;
+
+//     yield 3;
+
+//     yield value;
+//   } catch (e) {
+//     // console.log(e);
+
+//     yield 1000;
+
+//     yield 2000;
+
+//     yield 3000;
+
+//     yield 4000;
+//   }
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+
+// // console.log(generator.throw(100));
+// console.log(generator.throw(new Error()));
+
+// console.log(generator.next(4).value);
+// console.log(generator.next(4).value);
+// console.log(generator.next().value);
+
+// //=============================
+
+// function* myGenerator() {
+//   try {
+//     const test = yield 1;
+
+//     console.log("test", test);
+
+//     const value = yield 2;
+
+//     yield 3;
+
+//     yield value;
+//   } catch (e) {
+//     // console.log(e);
+
+//     yield 1000;
+//   }
+
+//   yield 2000;
+
+//   yield 3000;
+
+//   yield 4000;
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+
+// // console.log(generator.throw(100));
+// console.log(generator.throw(new Error()));
+
+// console.log(generator.next(4).value);
+// console.log(generator.next(4).value);
+// console.log(generator.next().value);
+
+// //=============================
+
+// function* myGenerator() {
+//   try {
+//     const test = yield 1;
+
+//     console.log("test", test);
+
+//     const value = yield 2;
+
+//     yield 3;
+
+//     yield value;
+//   } catch (e) {
+//     // console.log(e);
+
+//     yield 1000;
+//   } finally {
+//     yield 2000;
+//   }
+//   yield 3000;
+
+//   yield 4000;
+// }
+
+// const generator = myGenerator();
+
+// console.log(generator.next().value);
+
+// // console.log(generator.throw(100));
+// console.log(generator.throw(new Error()));
+
+// console.log(generator.next(4).value);
+// console.log(generator.next(4).value);
+// console.log(generator.next().value);
+
+//=================================================
+
+// async function* asyncGenerator() {
+//   await new Promise((resolve) => setTimeout(resolve, 1000));
+//   yield "After 1 second";
+//   await new Promise((resolve) => setTimeout(resolve, 1000));
+//   yield "After 2 seconds";
+// }
+
+// async function runGenerator() {
+//   const generator = asyncGenerator();
+//   console.log((await generator.next()).value);
+//   console.log((await generator.next()).value);
+// }
+
+// runGenerator();
+
+// //=================================================
+
+// const asyncfunc = () => new Promise((resolve) => setTimeout(resolve, 1000));
+
+// async function* asyncGenerator() {
+//   await asyncfunc();
+//   yield "After 1 second";
+//   await asyncfunc();
+//   yield "After 2 seconds";
+// }
+
+// async function runGenerator() {
+//   const generator = asyncGenerator();
+
+//   let result = null;
+
+//   result = await generator.next();
+
+//   console.log(result);
+
+//   result = await generator.next();
+
+//   result.value;
+
+//   console.log(result);
+
+//   // console.log((await generator.next()).value);
+//   // console.log((await generator.next()).value);
+// }
+
+// runGenerator();
+
+//=================================================
+
+// const asyncFunc = () => new Promise((resolve) => setTimeout(resolve, 1000));
+
+// async function* asyncGenerator() {
+//   await asyncFunc();
+//   yield "After 1 second";
+//   await asyncFunc();
+//   yield "After 2 seconds";
+// }
+
+// async function runGenerator() {
+//   const generator = asyncGenerator();
+
+//   for await (const result of generator) {
+//     console.log(result);
+
+//     await asyncFunc();
+//   }
+// }
+
+// runGenerator();
+
+//===========================================================
+
+//Функція яка симулює завантаження даних з сервера
+
+function fetchDataFromServer() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const randomNumber = Math.random();
+      if (randomNumber < 0.7) {
+        resolve("Дані успішно завантажені");
+      } else {
+        reject("Помилка завантаження даних");
+      }
+    }, 1000);
+  });
+}
+
+//Функція для конвертації даних
+function convertData(data) {
+  return new Promise((resolve) => {
+    // Симулюємо асинхронну конвертацію даних
+    setTimeout(() => {
+      const convertedData = data.toUpperCase(); // Приклад конвертації
+      resolve(convertedData);
+    }, 500);
+  });
+}
+
+// Генераторний метод що використовує `yield` для послідовного завантаження з сервера
+
+async function* fetchData() {
+  try {
+    const result = await fetchDataFromServer(); // Завантажуємо дані з сервера
+
+    yield "pending"; // Повертаємо статус pending
+
+    const convertedData = await convertData(result); // Конвертуємо дані
+
+    yield "success"; // Повертаємо статус "convert"
+
+    return convertedData; // Повертаємо конвертовані дані
+  } catch (error) {
+    yield "error"; // Повертаємо статус "error"
+  }
+}
+
+(async () => {
+  const generator = fetchData();
+
+  console.log(await generator.next());
+
+  console.log(await generator.next());
+
+  console.log(await generator.next());
+})();
